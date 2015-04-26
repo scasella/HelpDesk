@@ -29,45 +29,50 @@ class DetailView: UIViewController, UITextFieldDelegate {
     @IBAction func saveButton(sender: AnyObject) {
         
         if isUpdating == true {
-                
-            name.removeAtIndex(nameSet)
-            number.removeAtIndex(nameSet)
-            hours.removeAtIndex(nameSet)
-            
-        name.insert(nameText.text, atIndex: nameSet)
         
-        number.insert(numberText.text, atIndex: nameSet)
-        
-        hours.insert(hoursText.text, atIndex: nameSet)
+            nameCust.removeAtIndex(nameSet)
             
-        NSUserDefaults.standardUserDefaults().setObject(name, forKey: "name")
-        NSUserDefaults.standardUserDefaults().setObject(number, forKey: "number")
-        NSUserDefaults.standardUserDefaults().setObject(hours, forKey: "hours")
-  
+            nameCust.removeAtIndex(nameSet)
+            
+            nameCust.removeAtIndex(nameSet)
+            
+            nameCust.insert(nameText.text, atIndex: nameSet)
+            
+            numberCust.insert(numberText.text, atIndex: nameSet)
+            
+            hoursCust.insert(hoursText.text, atIndex: nameSet)
+            
+            NSUserDefaults.standardUserDefaults().setObject(nameCust, forKey: "nameCust")
+            NSUserDefaults.standardUserDefaults().setObject(numberCust, forKey: "numberCust")
+            NSUserDefaults.standardUserDefaults().setObject(hoursCust, forKey: "hoursCust")
+            NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
             
         } else {
             
-            name.append(nameText.text)
-            
-            number.append(numberText.text)
-            
-            hours.append(hoursText.text)
-            
-            customNum = customNum + 1
-            
-            if NSUserDefaults.standardUserDefaults().objectForKey("customNum") == nil {
+            if find(favorites, nameText.text) != nil {
                 
-                customNum = customNum + 1} else {
+                println("Company name already favorited")
                 
-                customNum = NSUserDefaults.standardUserDefaults().objectForKey("customNum")! as! Int
+            } else {
+            
+            favorites.append(nameText.text)
+            
+            nameCust.append(nameText.text)
+            
+            numberCust.append(numberText.text)
+            
+            hoursCust.append(hoursText.text)
+            
+            NSUserDefaults.standardUserDefaults().setObject(nameCust, forKey: "nameCust")
+            NSUserDefaults.standardUserDefaults().setObject(numberCust, forKey: "numberCust")
+            NSUserDefaults.standardUserDefaults().setObject(hoursCust, forKey: "hoursCust")
+            NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
                 
-                customNum = customNum + 1 }
-                
-                NSUserDefaults.standardUserDefaults().setObject(customNum, forKey: "customNum")
-                NSUserDefaults.standardUserDefaults().setObject(name, forKey: "name")
-                NSUserDefaults.standardUserDefaults().setObject(number, forKey: "number")
-                NSUserDefaults.standardUserDefaults().setObject(hours, forKey: "hours")
+            }
+            
         }
+        
+        performSegueWithIdentifier("mainSegue", sender: self)
         
     }
     
@@ -75,28 +80,24 @@ class DetailView: UIViewController, UITextFieldDelegate {
         
         favorites.append(nameString)
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("customNum") == nil {
-            
-            customNum = customNum + 1} else {
-            
-            customNum = NSUserDefaults.standardUserDefaults().objectForKey("customNum")! as! Int
-            
-            customNum = customNum + 1 }
-            
+        nameCust.append(nameText.text)
+        
+        numberCust.append(numberText.text)
+        
+        hoursCust.append(hoursText.text)
+        
+        NSUserDefaults.standardUserDefaults().setObject(nameCust, forKey: "nameCust")
+        NSUserDefaults.standardUserDefaults().setObject(numberCust, forKey: "numberCust")
+        NSUserDefaults.standardUserDefaults().setObject(hoursCust, forKey: "hoursCust")
+        NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
+    
         performSegueWithIdentifier("mainSegue", sender: self)
     
     }
     
-    override func viewDidLoad(){
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
         
-        if isUpdating == false {
-            
-            favoriteButton.enabled = false
-            
-        } else {
-            
-            nameSet = find(name, nameString) as Int!
+        if fromList == true {
             
             favoriteButton.enabled = true
             
@@ -107,7 +108,32 @@ class DetailView: UIViewController, UITextFieldDelegate {
             numberText.text = number[nameSet]
             
             hoursText.text = hours[nameSet]
+            
+        } else if newSave == true {
+            
+            mainText.text = "New Entry"
+            
+        } else {
         
+            mainText.text = favorites[nameSet]
+            
+            nameText.text = favorites[nameSet]
+            
+            numberText.text = numberCust[nameSet]
+            
+            hoursText.text = hoursCust[nameSet]
+            
+        }
+
+    }
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        
+        if isUpdating == false {
+            
+            favoriteButton.enabled = false
+            
         }
         
     }

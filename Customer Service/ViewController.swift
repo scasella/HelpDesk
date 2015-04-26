@@ -10,6 +10,10 @@ import UIKit
 
 var nameSet: Int = 0
 
+var newSave = false
+
+var fromList = true
+
 var customNum = 0
 
 var favorites = [String]()
@@ -20,8 +24,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var listTable: UITableView!
   
     @IBAction func customButton(sender: AnyObject) {
-        
+        newSave = true
         isUpdating = false
+        fromList = false
         performSegueWithIdentifier("customSegue", sender: self)
         
     }
@@ -33,18 +38,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mainTable.hidden = false
         resultSearchController.searchBar.resignFirstResponder()
     }
-    
+
     override func viewWillAppear(animated: Bool) {
-        if NSUserDefaults.standardUserDefaults().objectForKey("name") != nil{
-        name = NSUserDefaults.standardUserDefaults().objectForKey("name")! as! [String] }
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("number") != nil{
-            number = NSUserDefaults.standardUserDefaults().objectForKey("number")! as! [String]}
-       
-        if NSUserDefaults.standardUserDefaults().objectForKey("hours") != nil{
-            hours = NSUserDefaults.standardUserDefaults().objectForKey("hours")! as! [String]}
-        
-        if name.count < 2 {
+        if NSUserDefaults.standardUserDefaults().objectForKey("favorites") != nil {
+            
+        favorites = NSUserDefaults.standardUserDefaults().objectForKey("favorites") as! [String]
+        nameCust = NSUserDefaults.standardUserDefaults().objectForKey("nameCust") as! [String]
+        numberCust = NSUserDefaults.standardUserDefaults().objectForKey("numberCust") as! [String]
+        hoursCust = NSUserDefaults.standardUserDefaults().objectForKey("hoursCust") as! [String] }
             
             let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
                 
@@ -57,6 +59,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     var urlContentArray = urlContent.componentsSeparatedByString(",")
                     
                     for index in urlContentArray {
+                        
                         name.append(index as! String)
                         
                     }
@@ -70,9 +73,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             task.resume()
             
-            NSUserDefaults.standardUserDefaults().setObject(name, forKey: "name")}
-        
-       if number.count < 2  {
+           name + nameCust
 
             let task2 = NSURLSession.sharedSession().dataTaskWithURL(url2!, completionHandler: { (data, response, error) -> Void in
                 
@@ -97,10 +98,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             task2.resume()
             
-        NSUserDefaults.standardUserDefaults().setObject(number, forKey: "number") }
-
-        
-        if hours.count < 2  {
+            number + numberCust
 
             let task3 = NSURLSession.sharedSession().dataTaskWithURL(url3!, completionHandler: { (data, response, error) -> Void in
                 
@@ -126,7 +124,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             task3.resume()
             
-            NSUserDefaults.standardUserDefaults().setObject(hours, forKey: "hours")}
+            hours + hoursCust
 
     
         self.resultSearchController = ({
@@ -135,22 +133,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             controller.dimsBackgroundDuringPresentation = false
             controller.searchBar.sizeToFit()
             controller.searchBar.delegate = self
+            controller.searchBar.showsCancelButton = false
             self.listTable!.tableHeaderView = controller.searchBar
             
             return controller
+            
         })()
     
+         self.listTable.backgroundColor = UIColor.whiteColor()
+        
     }
     
     override func viewDidLoad(){
            super.viewDidLoad()
-    
-        resultSearchController.searchBar.delegate = self
-        
-    }
-    
-    override func viewDidDisappear(animated: Bool){
-        NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
+       
+        self.resultSearchController.searchBar.delegate = self
         
     }
     
@@ -199,13 +196,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             return cell2}
     }
-    
-    func presentSearchController(searchController: UISearchController){
-        
-         resultSearchController.searchBar.showsCancelButton = false
-        mainTable.hidden = true
-
-}
 
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
@@ -217,31 +207,78 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
          let array = (name as NSArray).filteredArrayUsingPredicate(searchPredicate)
         filteredNames = array as! [String]
+        if filteredNames.count < 1 {
+            mainTable.hidden = false
+        } else {
+            mainTable.hidden = true
+        }
         self.listTable!.reloadData()
-          mainTable.hidden = true
+      
     }
+    
+    func presentSearchController(searchController: UISearchController) {
+        resultSearchController.searchBar.showsCancelButton = false
+        mainTable.hidden = true
+
+    }
+
     
      func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         if tableView == mainTable {
-          
+            
+            newSave = false
+            
+            fromList = false
+            
+            isUpdating = true
+            
             nameString = "\(favorites[indexPath.row])"
+            
+            nameSet = indexPath.row
             
             performSegueWithIdentifier("detailSegue", sender: self)
         
         } else {
             
-            nameString = "\(filteredNames[indexPath.row])"
+            newSave = false
+            
+            isUpdating = true 
+            
+            fromList = true
+            
+            nameString = "\(name[indexPath.row])"
+            
+            nameSet = indexPath.row
             
             performSegueWithIdentifier("detailSegue", sender: self)
-    }
+        }}
     
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             
             nameSet = indexPath.row
             UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(number[nameSet]))")!)
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        
-        
-    }
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            
+            favorites.removeAtIndex(indexPath.row)
+            
+            nameCust.removeAtIndex(indexPath.row)
+            
+            numberCust.removeAtIndex(indexPath.row)
+            
+            hoursCust.removeAtIndex(indexPath.row)
+            
+            NSUserDefaults.standardUserDefaults().setObject(nameCust, forKey: "nameCust")
+            NSUserDefaults.standardUserDefaults().setObject(numberCust, forKey: "numberCust")
+            NSUserDefaults.standardUserDefaults().setObject(hoursCust, forKey: "hoursCust")
+            NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
+            
+            mainTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        }
 }
+    }
+

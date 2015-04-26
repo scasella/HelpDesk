@@ -20,3 +20,8 @@ var hours = [String]()
 
 var number = [String]()
 
+var nameCust = [String]()
+
+var hoursCust = [String]()
+
+var numberCust = [String]()
