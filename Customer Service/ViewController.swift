@@ -10,6 +10,8 @@ import UIKit
 
 var nameSet: Int = 0
 
+var filteredCount = 0
+
 var newSave = false
 
 var fromList = true
@@ -218,6 +220,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func presentSearchController(searchController: UISearchController) {
         resultSearchController.searchBar.showsCancelButton = false
+         UISearchBarStyle.Minimal
         mainTable.hidden = true
 
     }
@@ -246,17 +249,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             fromList = true
             
-            nameString = "\(name[indexPath.row])"
+            nameString = "\(name[find(name, filteredNames[indexPath.row])!])"
             
-            nameSet = indexPath.row
+            nameSet = find(name, nameString)!
             
             performSegueWithIdentifier("detailSegue", sender: self)
         }}
     
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             
-            nameSet = indexPath.row
+             nameSet = indexPath.row
+            
+            if tableView == mainTable {
+                
+                UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numberCust[nameSet]))")!)
+                
+            } else {
+        
             UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(number[nameSet]))")!)
+                
+            }
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -277,6 +289,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
             
             mainTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            mainTable.reloadData()
             
         }
 }

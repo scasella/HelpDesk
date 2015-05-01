@@ -16,6 +16,10 @@ class DetailView: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var mainText: UILabel!
     
+    @IBAction func tapGesture(sender: AnyObject) {
+        
+        resignFirstResponder()
+    }
     @IBOutlet var nameText: UITextField!
     
     @IBOutlet var numberText: UITextField!
@@ -28,13 +32,13 @@ class DetailView: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveButton(sender: AnyObject) {
         
-        if isUpdating == true {
+        if isUpdating == true && fromList == false {
         
             nameCust.removeAtIndex(nameSet)
             
-            nameCust.removeAtIndex(nameSet)
+            numberCust.removeAtIndex(nameSet)
             
-            nameCust.removeAtIndex(nameSet)
+            hoursCust.removeAtIndex(nameSet)
             
             nameCust.insert(nameText.text, atIndex: nameSet)
             
@@ -47,9 +51,7 @@ class DetailView: UIViewController, UITextFieldDelegate {
             NSUserDefaults.standardUserDefaults().setObject(hoursCust, forKey: "hoursCust")
             NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
             
-        } else {
-            
-            if find(favorites, nameText.text) != nil {
+        } else if find(favorites, nameText.text) != nil {
                 
                 println("Company name already favorited")
                 
@@ -69,9 +71,7 @@ class DetailView: UIViewController, UITextFieldDelegate {
             NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
                 
             }
-            
-        }
-        
+    
         performSegueWithIdentifier("mainSegue", sender: self)
         
     }
