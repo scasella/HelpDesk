@@ -22,6 +22,27 @@ var favorites = [String]()
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating {
     
+    
+    //Fav Results Add Button
+    func buttonClicked(sender:UIButton) {
+        
+        var buttonRow = sender.tag
+        var lookup = find(name, filteredNames[buttonRow]) //locate company within directory
+        favorites.append(filteredNames[buttonRow])
+        
+        nameCust.append(filteredNames[buttonRow])
+        
+        numberCust.append(number[lookup!])
+        
+        hoursCust.append(hours[lookup!])
+        
+        NSUserDefaults.standardUserDefaults().setObject(nameCust, forKey: "nameCust")
+        NSUserDefaults.standardUserDefaults().setObject(numberCust, forKey: "numberCust")
+        NSUserDefaults.standardUserDefaults().setObject(hoursCust, forKey: "hoursCust")
+        NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
+        
+    }
+    
     @IBOutlet var mainTable: UITableView!
     @IBOutlet var listTable: UITableView!
   
@@ -35,12 +56,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var resultSearchController = UISearchController()
 
     var filteredNames = [String]()
-    
-    @IBAction func tapGesture(sender: AnyObject) {
-        mainTable.hidden = false
-        resultSearchController.searchBar.resignFirstResponder()
-    }
 
+    
+    //Download and load saved stuff
     override func viewWillAppear(animated: Bool) {
         
         if NSUserDefaults.standardUserDefaults().objectForKey("favorites") != nil {
@@ -135,20 +153,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             controller.dimsBackgroundDuringPresentation = false
             controller.searchBar.sizeToFit()
             controller.searchBar.delegate = self
-            controller.searchBar.showsCancelButton = false
             self.listTable!.tableHeaderView = controller.searchBar
             
             return controller
             
         })()
-    
-         self.listTable.backgroundColor = UIColor.whiteColor()
-        
-    }
+        }
     
     override func viewDidLoad(){
            super.viewDidLoad()
-       
         self.resultSearchController.searchBar.delegate = self
         
     }
@@ -157,7 +170,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+//Table Setup
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (self.resultSearchController.active) {
             return self.filteredNames.count
@@ -169,47 +182,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cell : UITableViewCell! = listTable.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+        var cell : CustomCell! = listTable.dequeueReusableCellWithIdentifier("Cell") as! CustomCell
         if(cell == nil)
         {
-            cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as! UITableViewCell;
+            cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as! CustomCell;
         }
         if (self.resultSearchController.active) {
             cell.textLabel?.text = filteredNames[indexPath.row] as String
             
-            cell.accessoryType = .DetailButton
-            
-            return cell
-            
-        } else if tableView == listTable {
-            
-            cell.textLabel!.text = ""
-            
-                cell.accessoryType = .DetailButton
+            cell.addButton.tag = indexPath.row
+            cell.addButton.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
             
             return cell
             
         } else {
             var cell2 : UITableViewCell! = mainTable.dequeueReusableCellWithIdentifier("Cell2") as! UITableViewCell
-           
+            
             cell2.textLabel!.text = favorites[indexPath.row]
             
-                cell2.accessoryType = .DetailButton
+            cell2.accessoryType = .DetailButton
             
             return cell2}
     }
-
     
+
+
+    //Search controller
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         
+     self.listTable.backgroundView = UIImageView(image: UIImage(named: "RectBG.png"))
         filteredNames.removeAll(keepCapacity: false)
-        
-        resultSearchController.searchBar.showsCancelButton = false
         
         let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
          let array = (name as NSArray).filteredArrayUsingPredicate(searchPredicate)
         filteredNames = array as! [String]
         if filteredNames.count < 1 {
+            self.listTable.backgroundView = nil
             mainTable.hidden = false
         } else {
             mainTable.hidden = true
@@ -219,13 +227,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func presentSearchController(searchController: UISearchController) {
-        resultSearchController.searchBar.showsCancelButton = false
-         UISearchBarStyle.Minimal
         mainTable.hidden = true
 
     }
 
-    
+   //mainTable Acessory Button
      func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         if tableView == mainTable {
             
@@ -256,24 +262,48 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             performSegueWithIdentifier("detailSegue", sender: self)
         }}
     
+    //Call number and change text color of row
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             
              nameSet = indexPath.row
+            
+            if tableView == listTable{
+              var indexPath = listTable.indexPathForSelectedRow()
+                var currentCell = listTable.cellForRowAtIndexPath(indexPath!) as! CustomCell
+                currentCell.addButton.hidden = false
+               currentCell.callButton.hidden = false
+                listTable.cellForRowAtIndexPath(indexPath!)?.textLabel?.textColor = UIColor.whiteColor()  }
             
             if tableView == mainTable {
                 
                 UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numberCust[nameSet]))")!)
                 
-            } else {
-        
-            UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(number[nameSet]))")!)
-                
             }
+            
+           /* else {
+        
+            UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(number[nameSet]))")!)   USE FOR CALL BUTTON
+                
+            } */
+        
     }
     
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        if tableView == listTable{
+            var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
+            currentCell.addButton.hidden = true
+            currentCell.callButton.hidden = true
+            listTable.cellForRowAtIndexPath(indexPath)?.textLabel?.textColor = UIColor.blackColor() }}
+    
+    
+    //Swipe-to-delete
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if editingStyle == UITableViewCellEditingStyle.Delete {
+       
+        if tableView == listTable {
+            
+            listTable.setEditing(false, animated: true)
+            
+        } else if tableView == mainTable && editingStyle == UITableViewCellEditingStyle.Delete  {
             
             favorites.removeAtIndex(indexPath.row)
             
@@ -290,9 +320,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             mainTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
-            mainTable.reloadData()
+            mainTable.reloadData() }
             
         }
 }
-    }
+
 
