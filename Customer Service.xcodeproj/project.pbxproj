@@ -15,6 +15,11 @@
 		88705F071AD9596C009E0F3C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88705F051AD9596C009E0F3C /* LaunchScreen.xib */; };
 		88705F131AD9596C009E0F3C /* Customer_ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88705F121AD9596C009E0F3C /* Customer_ServiceTests.swift */; };
 		88705F251AD95FCA009E0F3C /* Notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 88705F241AD95FCA009E0F3C /* Notepad.png */; };
+		88E927691B13CE20000297ED /* purpleItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E927641B13CE20000297ED /* purpleItem.png */; };
+		88E9276A1B13CE20000297ED /* pinkItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E927651B13CE20000297ED /* pinkItem.png */; };
+		88E9276B1B13CE20000297ED /* orangeItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E927661B13CE20000297ED /* orangeItem.png */; };
+		88E9276C1B13CE20000297ED /* greenItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E927671B13CE20000297ED /* greenItem.png */; };
+		88E9276D1B13CE20000297ED /* blueItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E927681B13CE20000297ED /* blueItem.png */; };
 		88EEC5AA1ADA7FE50098341A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88EEC5A81ADA7FE50098341A /* Main.storyboard */; };
 		88F22B7F1AD96CF900282A80 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F22B7E1AD96CF900282A80 /* Directory.swift */; };
 		88F69FF11B08FC40001C4BBB /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F69FF01B08FC40001C4BBB /* CustomCell.swift */; };
@@ -47,6 +52,11 @@
 		88705F111AD9596C009E0F3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88705F121AD9596C009E0F3C /* Customer_ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer_ServiceTests.swift; sourceTree = "<group>"; };
 		88705F241AD95FCA009E0F3C /* Notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notepad.png; sourceTree = "<group>"; };
+		88E927641B13CE20000297ED /* purpleItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purpleItem.png; sourceTree = "<group>"; };
+		88E927651B13CE20000297ED /* pinkItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinkItem.png; sourceTree = "<group>"; };
+		88E927661B13CE20000297ED /* orangeItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeItem.png; sourceTree = "<group>"; };
+		88E927671B13CE20000297ED /* greenItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenItem.png; sourceTree = "<group>"; };
+		88E927681B13CE20000297ED /* blueItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueItem.png; sourceTree = "<group>"; };
 		88EEC5A91ADA7FE50098341A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88F22B7E1AD96CF900282A80 /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		88F69FF01B08FC40001C4BBB /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -96,6 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				88F69FF21B0917F8001C4BBB /* Rectangle.png */,
+				88E927641B13CE20000297ED /* purpleItem.png */,
+				88E927651B13CE20000297ED /* pinkItem.png */,
+				88E927661B13CE20000297ED /* orangeItem.png */,
+				88E927671B13CE20000297ED /* greenItem.png */,
+				88E927681B13CE20000297ED /* blueItem.png */,
 				88F69FF41B091A2F001C4BBB /* CellRect.png */,
 				88F69FF61B091B05001C4BBB /* RectBG.png */,
 				88F69FF81B092149001C4BBB /* Favorite.png */,
@@ -219,11 +234,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88E927691B13CE20000297ED /* purpleItem.png in Resources */,
 				88F69FF71B091B05001C4BBB /* RectBG.png in Resources */,
 				88EEC5AA1ADA7FE50098341A /* Main.storyboard in Resources */,
 				88F69FF31B0917F8001C4BBB /* Rectangle.png in Resources */,
+				88E9276C1B13CE20000297ED /* greenItem.png in Resources */,
+				88E9276A1B13CE20000297ED /* pinkItem.png in Resources */,
+				88E9276D1B13CE20000297ED /* blueItem.png in Resources */,
 				88F69FF91B092149001C4BBB /* Favorite.png in Resources */,
 				8804A2351AE5E3900024B366 /* Phone.png in Resources */,
+				88E9276B1B13CE20000297ED /* orangeItem.png in Resources */,
 				88F69FF51B091A2F001C4BBB /* CellRect.png in Resources */,
 				88705F071AD9596C009E0F3C /* LaunchScreen.xib in Resources */,
 				88705F041AD9596C009E0F3C /* Images.xcassets in Resources */,

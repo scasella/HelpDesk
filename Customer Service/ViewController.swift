@@ -8,6 +8,8 @@
 
 import UIKit
 
+var bgSet = 0
+
 var nameSet: Int = 0
 
 var filteredCount = 0
@@ -188,7 +190,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as! CustomCell;
         }
         if (self.resultSearchController.active) {
-            cell.textLabel?.text = filteredNames[indexPath.row] as String
+            cell.listLabel.text = filteredNames[indexPath.row] as String
             
             cell.addButton.tag = indexPath.row
             cell.addButton.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -196,11 +198,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
             
         } else {
-            var cell2 : UITableViewCell! = mainTable.dequeueReusableCellWithIdentifier("Cell2") as! UITableViewCell
+            var cell2 : MainCell! = mainTable.dequeueReusableCellWithIdentifier("Cell2") as! MainCell
             
-            cell2.textLabel!.text = favorites[indexPath.row]
+            cell2.cellLabel.text = favorites[indexPath.row]
             
-            cell2.accessoryType = .DetailButton
+            if indexPath.row == 0 {
+                bgSet = 0
+            }
+            switch bgSet {
+            case 1 : cell2.cellBG.image = UIImage(named: "greenItem.png"); bgSet = 2
+            case 2 : cell2.cellBG.image = UIImage(named: "pinkItem.png"); bgSet = 3
+            case 3 : cell2.cellBG.image = UIImage(named: "blueItem.png"); bgSet = 4
+            case 4 :  cell2.cellBG.image = UIImage(named: "purpleItem.png"); bgSet = 0
+            default : cell2.cellBG.image = UIImage(named: "orangeItem.png"); bgSet = 1
+            
+            }
+    
+            
+            cell2.frame.size = cell2.cellBG.frame.size
+            
+            //cell2.accessoryType = .DetailButton
             
             return cell2}
     }
@@ -272,7 +289,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 var currentCell = listTable.cellForRowAtIndexPath(indexPath!) as! CustomCell
                 currentCell.addButton.hidden = false
                currentCell.callButton.hidden = false
-                listTable.cellForRowAtIndexPath(indexPath!)?.textLabel?.textColor = UIColor.whiteColor()  }
+                currentCell.listLabel.textColor = UIColor.whiteColor()}
             
             if tableView == mainTable {
                 
@@ -293,7 +310,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
             currentCell.addButton.hidden = true
             currentCell.callButton.hidden = true
-            listTable.cellForRowAtIndexPath(indexPath)?.textLabel?.textColor = UIColor.blackColor() }}
+            currentCell.listLabel.textColor = UIColor.blackColor()}}
     
     
     //Swipe-to-delete
