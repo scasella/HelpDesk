@@ -8,7 +8,7 @@
 
 import UIKit
 
-var bgSet = 0
+var prevBG = ""
 
 var nameSet: Int = 0
 
@@ -192,6 +192,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if (self.resultSearchController.active) {
             cell.listLabel.text = filteredNames[indexPath.row] as String
             
+            cell.listLabel.textColor = UIColor.blackColor()
+            cell.addButton.hidden = true
+            cell.callButton.hidden = true
+            cell.listCellBG.highlighted = false
             cell.addButton.tag = indexPath.row
             cell.addButton.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
             
@@ -202,20 +206,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             cell2.cellLabel.text = favorites[indexPath.row]
             
-            if indexPath.row == 0 {
-                bgSet = 0
-            }
-            switch bgSet {
-            case 1 : cell2.cellBG.image = UIImage(named: "greenItem.png"); bgSet = 2
-            case 2 : cell2.cellBG.image = UIImage(named: "pinkItem.png"); bgSet = 3
-            case 3 : cell2.cellBG.image = UIImage(named: "blueItem.png"); bgSet = 4
-            case 4 :  cell2.cellBG.image = UIImage(named: "purpleItem.png"); bgSet = 0
-            default : cell2.cellBG.image = UIImage(named: "orangeItem.png"); bgSet = 1
-            
-            }
+           
+            if nameCust.count != 0 {
+                
+            var bgSet: Int = find(nameCust, cell2.cellLabel.text!)!
     
-            
-            cell2.frame.size = cell2.cellBG.frame.size
+            switch bgSet {
+            case 0 : cell2.cellBG.image = UIImage(named: "orangeItem.png")
+            case 1 : cell2.cellBG.image = UIImage(named: "greenItem.png")
+            case 2 : cell2.cellBG.image = UIImage(named: "pinkItem.png")
+            case 3 : cell2.cellBG.image = UIImage(named: "blueItem.png")
+            case 4 :  cell2.cellBG.image = UIImage(named: "purpleItem.png"); prevBG = "orangeItem.png"
+            default : switch prevBG {
+            case "orangeItem.png" : cell2.cellBG.image = UIImage(named: "orangeItem.png"); prevBG = "greenItem.png"
+            case "greenItem.png" : cell2.cellBG.image = UIImage(named: "greenItem.png"); prevBG = "pinkItem.png"
+            case "pinkItem.png" : cell2.cellBG.image = UIImage(named: "pinkItem.png"); prevBG = "blueItem.png"
+            case "blueItem.png" : cell2.cellBG.image = UIImage(named: "blueItem.png"); prevBG = "purpleItem.png"
+            default : cell2.cellBG.image = UIImage(named: "purpleItem.png"); prevBG = "orangeItem.png"
+                }
+                }
+                
+            }
+
             
             //cell2.accessoryType = .DetailButton
             
@@ -292,6 +304,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 currentCell.listLabel.textColor = UIColor.whiteColor()}
             
             if tableView == mainTable {
+                
                 
                 UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numberCust[nameSet]))")!)
                 
