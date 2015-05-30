@@ -191,14 +191,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         if (self.resultSearchController.active) {
             cell.listLabel.text = filteredNames[indexPath.row] as String
-            
-            cell.listLabel.textColor = UIColor.blackColor()
-            cell.addButton.hidden = true
-            cell.callButton.hidden = true
-            cell.listCellBG.highlighted = false
+           
             cell.addButton.tag = indexPath.row
             cell.addButton.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
             
+            
+            cell.listCellBG.image = UIImage(named: "")
+            cell.addButton.hidden = true
+            cell.callButton.hidden = true
+            cell.listLabel.textColor = UIColor.blackColor()
+
             return cell
             
         } else {
@@ -261,7 +263,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
    //mainTable Acessory Button
-     func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+     /* func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         if tableView == mainTable {
             
             newSave = false
@@ -289,19 +291,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             nameSet = find(name, nameString)!
             
             performSegueWithIdentifier("detailSegue", sender: self)
-        }}
+        }} */
     
     //Call number and change text color of row
+    
+
+
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             
              nameSet = indexPath.row
             
-            if tableView == listTable{
-              var indexPath = listTable.indexPathForSelectedRow()
-                var currentCell = listTable.cellForRowAtIndexPath(indexPath!) as! CustomCell
-                currentCell.addButton.hidden = false
-               currentCell.callButton.hidden = false
-                currentCell.listLabel.textColor = UIColor.whiteColor()}
+            
+            var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
+            currentCell.listCellBG.image = UIImage(named: "Rectangle.png")
+            currentCell.addButton.hidden = false
+            currentCell.callButton.hidden = false
+                currentCell.listLabel.textColor = UIColor.whiteColor()
+
             
             if tableView == mainTable {
                 
@@ -320,10 +326,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         if tableView == listTable{
+            
+            if listTable.cellForRowAtIndexPath(indexPath) != nil {
             var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
+            currentCell.listCellBG.image = UIImage(named: "")
             currentCell.addButton.hidden = true
             currentCell.callButton.hidden = true
             currentCell.listLabel.textColor = UIColor.blackColor()}}
+        
+    }
     
     
     //Swipe-to-delete
