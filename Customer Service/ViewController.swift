@@ -24,6 +24,7 @@ var favorites = [String]()
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating {
     
+    @IBOutlet var clearBGImage: UIImageView!
     
     //Fav Results Add Button
     func buttonClicked(sender:UIButton) {
@@ -43,11 +44,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         NSUserDefaults.standardUserDefaults().setObject(hoursCust, forKey: "hoursCust")
         NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
         
+        
     }
     
     @IBOutlet var mainTable: UITableView!
     @IBOutlet var listTable: UITableView!
-  
+    
     @IBAction func customButton(sender: AnyObject) {
         newSave = true
         isUpdating = false
@@ -160,6 +162,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return controller
             
         })()
+        
+ 
+        
         }
     
     override func viewDidLoad(){
@@ -213,7 +218,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
             var bgSet: Int = find(nameCust, cell2.cellLabel.text!)!
     
-            switch bgSet {
+            /*switch bgSet {
             case 0 : cell2.cellBG.image = UIImage(named: "orangeItem.png")
             case 1 : cell2.cellBG.image = UIImage(named: "greenItem.png")
             case 2 : cell2.cellBG.image = UIImage(named: "pinkItem.png")
@@ -226,7 +231,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             case "blueItem.png" : cell2.cellBG.image = UIImage(named: "blueItem.png"); prevBG = "purpleItem.png"
             default : cell2.cellBG.image = UIImage(named: "purpleItem.png"); prevBG = "orangeItem.png"
                 }
-                }
+                }*/
                 
             }
 
@@ -241,17 +246,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //Search controller
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         
-     self.listTable.backgroundView = UIImageView(image: UIImage(named: "RectBG.png"))
+  
         filteredNames.removeAll(keepCapacity: false)
         
         let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
          let array = (name as NSArray).filteredArrayUsingPredicate(searchPredicate)
         filteredNames = array as! [String]
         if filteredNames.count < 1 {
-            self.listTable.backgroundView = nil
-            mainTable.hidden = false
+                        mainTable.hidden = false
+                    clearBGImage.hidden = true
         } else {
             mainTable.hidden = true
+            clearBGImage.hidden = false
+
         }
         self.listTable!.reloadData()
       
@@ -259,8 +266,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func presentSearchController(searchController: UISearchController) {
         mainTable.hidden = true
+        clearBGImage.hidden = false
+
 
     }
+
 
    //mainTable Acessory Button
      /* func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
@@ -301,12 +311,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
              nameSet = indexPath.row
             
-            
+            if tableView == listTable {
             var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
-            currentCell.listCellBG.image = UIImage(named: "Rectangle.png")
+            currentCell.listCellBG.image = UIImage(named: "CellHL.png")
             currentCell.addButton.hidden = false
             currentCell.callButton.hidden = false
-                currentCell.listLabel.textColor = UIColor.whiteColor()
+                currentCell.listLabel.textColor = UIColor.whiteColor() }
 
             
             if tableView == mainTable {
@@ -336,10 +346,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    
-    //Swipe-to-delete
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-       
+        
         if tableView == listTable {
             
             listTable.setEditing(false, animated: true)
@@ -362,8 +370,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             mainTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
             mainTable.reloadData() }
-            
-        }
+        
+    }
 }
+
 
 
