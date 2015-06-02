@@ -44,8 +44,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         NSUserDefaults.standardUserDefaults().setObject(hoursCust, forKey: "hoursCust")
         NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
         
+        listTable.reloadData()
+        
         
     }
+    
+    
+    func mainCallClicked(sender:UIButton) {
+        
+        var numLookup = numberCust[sender.tag]
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numLookup))")!)
+        mainTable.reloadData()
+        
+    }
+
     
     @IBOutlet var mainTable: UITableView!
     @IBOutlet var listTable: UITableView!
@@ -211,7 +223,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else {
             var cell2 : MainCell! = mainTable.dequeueReusableCellWithIdentifier("Cell2") as! MainCell
             
+            cell2.callButton.tag = indexPath.row
             cell2.cellLabel.text = favorites[indexPath.row]
+            cell2.callButton.addTarget(self, action: "mainCallClicked:", forControlEvents: UIControlEvents.TouchUpInside)
             
            
             if nameCust.count != 0 {
@@ -253,6 +267,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
          let array = (name as NSArray).filteredArrayUsingPredicate(searchPredicate)
         filteredNames = array as! [String]
         if filteredNames.count < 1 {
+            mainTable.reloadData()
                         mainTable.hidden = false
                     clearBGImage.hidden = true
         } else {
@@ -318,12 +333,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             currentCell.callButton.hidden = false
                 currentCell.listLabel.textColor = UIColor.whiteColor() }
 
-            
-            if tableView == mainTable {
-                
-                
-                UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numberCust[nameSet]))")!)
-                
             }
             
            /* else {
@@ -332,7 +341,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
             } */
         
-    }
+
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         if tableView == listTable{

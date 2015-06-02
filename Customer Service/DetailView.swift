@@ -142,6 +142,25 @@ class DetailView: UIViewController, UITextFieldDelegate {
         mainText.text = nameText.text
     }
 
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        if textField == numberText {
+            if count(numberText.text) == 8 || count(numberText.text) == 0 {
+                return true } else {
+                numberText.text = ""
+                numberText.placeholder = "Enter phone number format 1112223333"
+                return true}
+            
+        }
+        
+        return true
+    
+    }
     
     
-}
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    }
+    

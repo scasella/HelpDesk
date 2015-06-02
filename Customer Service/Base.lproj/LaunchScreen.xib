@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,12 +10,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Head.png" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-dH-uAL">
-                    <rect key="frame" x="8" y="241" width="94" height="115"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="115" id="h6k-Ul-2SH"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HelpDesk" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
                     <rect key="frame" x="66" y="119" width="243" height="126"/>
                     <constraints>
@@ -26,68 +19,24 @@
                     <color key="textColor" red="0.13725490196078433" green="0.49411764705882355" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Approval.png" translatesAutoresizingMaskIntoConstraints="NO" id="Um3-4c-pKw">
-                    <rect key="frame" x="153" y="253" width="92" height="91"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="92" id="QXh-bs-M2B"/>
-                        <constraint firstAttribute="height" constant="91" id="yO4-8C-rdr"/>
-                    </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="39s-2R-WRe">
-                    <rect key="frame" x="74" y="300" width="45" height="68"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="68" id="e8l-Th-jG9"/>
-                        <constraint firstAttribute="width" constant="45" id="rtQ-Sg-510"/>
-                    </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.89999999999999991" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Info.png" translatesAutoresizingMaskIntoConstraints="NO" id="0aU-ze-mx6">
-                    <rect key="frame" x="74" y="268" width="71" height="58"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="58" id="tQt-QK-DGe"/>
-                    </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Assistant.png" translatesAutoresizingMaskIntoConstraints="NO" id="c4R-qJ-N0w">
-                    <rect key="frame" x="264" y="241" width="103" height="115"/>
-                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Stephen Casella. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
                     <rect key="frame" x="6" y="625" width="362" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="c4R-qJ-N0w" firstAttribute="centerY" secondItem="Um3-4c-pKw" secondAttribute="centerY" id="0Fn-sh-OL5"/>
-                <constraint firstItem="c4R-qJ-N0w" firstAttribute="leading" secondItem="Um3-4c-pKw" secondAttribute="trailing" constant="19" id="43V-Gv-ZDu"/>
-                <constraint firstItem="39s-2R-WRe" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="55" id="9cf-uJ-vvo"/>
-                <constraint firstItem="Um3-4c-pKw" firstAttribute="leading" secondItem="39s-2R-WRe" secondAttribute="trailing" constant="34" id="DVJ-jw-jyk"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="EhL-nG-BZg"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="21" id="KYN-ci-UkJ"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Kjt-U8-B8u"/>
-                <constraint firstItem="wG3-dH-uAL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="RIz-nz-mqu"/>
-                <constraint firstItem="Um3-4c-pKw" firstAttribute="leading" secondItem="wG3-dH-uAL" secondAttribute="trailing" constant="51" id="X00-es-uHm"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="119" id="XAP-gZ-7To"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="dFQ-81-Hki"/>
-                <constraint firstItem="c4R-qJ-N0w" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="fIe-ML-eXo"/>
-                <constraint firstItem="0aU-ze-mx6" firstAttribute="leading" secondItem="39s-2R-WRe" secondAttribute="leading" id="hZV-5c-zLL"/>
-                <constraint firstItem="wG3-dH-uAL" firstAttribute="bottom" secondItem="c4R-qJ-N0w" secondAttribute="bottom" id="m9b-pb-bJc"/>
-                <constraint firstItem="0aU-ze-mx6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="74" id="sPb-18-Li0"/>
-                <constraint firstItem="Um3-4c-pKw" firstAttribute="leading" secondItem="0aU-ze-mx6" secondAttribute="trailing" constant="8" symbolic="YES" id="sQq-MO-7VQ"/>
-                <constraint firstItem="c4R-qJ-N0w" firstAttribute="top" secondItem="wG3-dH-uAL" secondAttribute="top" id="zGe-dm-U3G"/>
-                <constraint firstItem="0aU-ze-mx6" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="23" id="zgO-xr-Af1"/>
-                <constraint firstItem="Um3-4c-pKw" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="8" symbolic="YES" id="zs0-te-v5Z"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="547.5" y="454.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="Approval.png" width="191" height="191"/>
-        <image name="Assistant.png" width="186" height="200"/>
-        <image name="Head.png" width="132" height="147"/>
-        <image name="Info.png" width="142" height="150"/>
-        <image name="Phone.png" width="108" height="138"/>
-    </resources>
 </document>
