@@ -14,12 +14,12 @@ var nameString = ""
 
 class DetailView: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet var panRecognizer: UIPanGestureRecognizer!
+
+    
     @IBOutlet var mainText: UILabel!
     
-    @IBAction func tapGesture(sender: AnyObject) {
-        
-        resignFirstResponder()
-    }
+
     @IBOutlet var nameText: UITextField!
     
     @IBOutlet var numberText: UITextField!
@@ -129,13 +129,14 @@ class DetailView: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+
         
         if isUpdating == false {
             
             favoriteButton.enabled = false
             
         }
-        
+
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
@@ -162,5 +163,13 @@ class DetailView: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    }
+    @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
+        let translation = recognizer.translationInView(self.view)
+        if let view = recognizer.view {
+            view.center = CGPoint(x:view.center.x + translation.x,
+                y:view.center.y + translation.y)
+        }
+        recognizer.setTranslation(CGPointZero, inView: self.view)
     
+    }
+}

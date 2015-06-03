@@ -69,6 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         performSegueWithIdentifier("customSegue", sender: self)
         
     }
+    
     var resultSearchController = UISearchController()
 
     var filteredNames = [String]()
