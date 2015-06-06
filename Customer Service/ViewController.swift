@@ -8,8 +8,6 @@
 
 import UIKit
 
-var prevBG = ""
-
 var nameSet: Int = 0
 
 var filteredCount = 0
@@ -21,6 +19,38 @@ var customNum = 0
 var favorites = [String]()
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating {
+    
+    @IBAction func searchButton(sender: AnyObject) {
+        if mainTable.hidden == false {
+            
+            searchImg.animation = "flipX"
+            searchImg.setImage(UIImage(named: "HeartImg.png"), forState: UIControlState.Normal)
+            searchImg.duration = 0.25
+            searchImg.animate()
+        mainTable.hidden = true
+        searchView.hidden = false
+        
+            
+        } else {
+            
+            searchImg.animation = "flipX"
+            searchImg.setImage(UIImage(named: "SeachImg.png"), forState: UIControlState.Normal)
+            searchImg.duration = 0.25
+            searchImg.animate()
+            mainTable.hidden = false
+            searchView.hidden = true
+            
+        
+        }
+        
+    }
+    
+    @IBOutlet var searchImg: SpringButton!
+    
+    @IBOutlet var searchView: UIView!
+    
+    @IBOutlet var callNoExpand: SpringImageView!
+    @IBOutlet var addButton: SpringButton!
     
     @IBOutlet var clearBGImage: UIImageView!
     
@@ -50,9 +80,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func mainCallClicked(sender:UIButton) {
         
-        var numLookup = numberCust[sender.tag]
+        nameSet = sender.tag
+        isNew = false
+        performSegueWithIdentifier("customSegue", sender: self)
+        
+        
+       /* var numLookup = numberCust[sender.tag]
         UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numLookup))")!)
-        mainTable.reloadData()
+        mainTable.reloadData()*/
         
     }
 
@@ -61,7 +96,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var listTable: UITableView!
     
     @IBAction func customButton(sender: AnyObject) {
+       
         isNew = true
+        callNoExpand.hidden = true
+        searchImg.hidden = true
+        addButton.hidden = true 
         performSegueWithIdentifier("customSegue", sender: self)
         
     }
@@ -265,7 +304,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         filteredNames = array as! [String]
         if filteredNames.count < 1 {
             mainTable.reloadData()
-                        mainTable.hidden = false
                     clearBGImage.hidden = true
         } else {
             mainTable.hidden = true

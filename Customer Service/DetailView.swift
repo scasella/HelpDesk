@@ -22,7 +22,10 @@ class DetailView: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var nameText: UITextField!
     
+    @IBOutlet var backButton: UIButton!
     @IBOutlet var numberText: UITextField!
+    
+    @IBOutlet var springView: SpringView!
     
     @IBOutlet var updateButton: UIButton!
     
@@ -152,7 +155,16 @@ class DetailView: UIViewController, UITextFieldDelegate {
             view.center = CGPoint(x:view.center.x + translation.x,
                 y:view.center.y + translation.y)
         }
-        recognizer.setTranslation(CGPointZero, inView: self.view)
+        recognizer.setTranslation(CGPointZero, inView: self.view)}
     
+        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+       springView.animation = "fall"
+        springView.duration = 1.5
+        springView.y = 300
+        springView.x = 300
+        springView.animate()
+        
     }
+  
 }

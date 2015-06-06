@@ -16,6 +16,7 @@
 		884BCFB91B231F930005716A /* CallNoExpand.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFB81B231F930005716A /* CallNoExpand.png */; };
 		884BCFBB1B2320030005716A /* Card2.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFBA1B2320030005716A /* Card2.png */; };
 		884BCFBD1B23238F0005716A /* Title.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFBC1B23238F0005716A /* Title.png */; };
+		884BCFBF1B235DE60005716A /* HeartImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFBE1B235DE60005716A /* HeartImg.png */; };
 		884C3E881B1A74D40025316B /* NameBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 884C3E861B1A74D30025316B /* NameBG.png */; };
 		884C3E891B1A74D40025316B /* CallBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 884C3E871B1A74D40025316B /* CallBG.png */; };
 		884C3E8B1B1A75150025316B /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 884C3E8A1B1A75150025316B /* Background.png */; };
@@ -82,6 +83,7 @@
 		884BCFB81B231F930005716A /* CallNoExpand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CallNoExpand.png; sourceTree = "<group>"; };
 		884BCFBA1B2320030005716A /* Card2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Card2.png; sourceTree = "<group>"; };
 		884BCFBC1B23238F0005716A /* Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Title.png; sourceTree = "<group>"; };
+		884BCFBE1B235DE60005716A /* HeartImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeartImg.png; sourceTree = "<group>"; };
 		884C3E861B1A74D30025316B /* NameBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NameBG.png; sourceTree = "<group>"; };
 		884C3E871B1A74D40025316B /* CallBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CallBG.png; sourceTree = "<group>"; };
 		884C3E8A1B1A75150025316B /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				884BCFB81B231F930005716A /* CallNoExpand.png */,
 				88F69FF21B0917F8001C4BBB /* Rectangle.png */,
 				884C3E8A1B1A75150025316B /* Background.png */,
+				884BCFBE1B235DE60005716A /* HeartImg.png */,
 				883CD9F21B1A1FEE00BA5230 /* WPhone.png */,
 				884C3E861B1A74D30025316B /* NameBG.png */,
 				884C3E871B1A74D40025316B /* CallBG.png */,
@@ -358,6 +361,7 @@
 				884BCFB91B231F930005716A /* CallNoExpand.png in Resources */,
 				88F69FF91B092149001C4BBB /* Favorite.png in Resources */,
 				88705F071AD9596C009E0F3C /* LaunchScreen.xib in Resources */,
+				884BCFBF1B235DE60005716A /* HeartImg.png in Resources */,
 				88705F041AD9596C009E0F3C /* Images.xcassets in Resources */,
 				88D721A81B1E826C008B1CF2 /* LoadingView.xib in Resources */,
 				884BCFB51B231ED60005716A /* Card.png in Resources */,
