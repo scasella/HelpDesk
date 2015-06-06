@@ -24,15 +24,13 @@ class DetailView: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var numberText: UITextField!
     
-    @IBOutlet var favoriteButton: UIButton!
-    
     @IBOutlet var updateButton: UIButton!
     
     @IBOutlet var hoursText: UITextField!
     
     @IBAction func saveButton(sender: AnyObject) {
         
-        if isUpdating == true && fromList == false {
+        if isNew == false {
         
             nameCust.removeAtIndex(nameSet)
             
@@ -97,24 +95,11 @@ class DetailView: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         
-        if fromList == true {
+        if isNew == false {
             
-            favoriteButton.enabled = true
+            mainText.hidden = false
+            nameText.hidden = true
             
-            mainText.text = name[nameSet]
-            
-            nameText.text = name[nameSet]
-            
-            numberText.text = number[nameSet]
-            
-            hoursText.text = hours[nameSet]
-            
-        } else if newSave == true {
-            
-            mainText.text = "New Entry"
-            
-        } else {
-        
             mainText.text = favorites[nameSet]
             
             nameText.text = favorites[nameSet]
@@ -123,19 +108,17 @@ class DetailView: UIViewController, UITextFieldDelegate {
             
             hoursText.text = hoursCust[nameSet]
             
+        } else if isNew == true {
+            
+            mainText.hidden = true
+            nameText.hidden = false
+            
         }
 
     }
     
     override func viewDidLoad(){
         super.viewDidLoad()
-
-        
-        if isUpdating == false {
-            
-            favoriteButton.enabled = false
-            
-        }
 
     }
     

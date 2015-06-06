@@ -14,9 +14,7 @@ var nameSet: Int = 0
 
 var filteredCount = 0
 
-var newSave = false
-
-var fromList = true
+var isNew = false
 
 var customNum = 0
 
@@ -63,9 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var listTable: UITableView!
     
     @IBAction func customButton(sender: AnyObject) {
-        newSave = true
-        isUpdating = false
-        fromList = false
+        isNew = true
         performSegueWithIdentifier("customSegue", sender: self)
         
     }

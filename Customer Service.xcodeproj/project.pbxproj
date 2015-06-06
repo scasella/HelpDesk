@@ -10,6 +10,12 @@
 		881672FB1AE43DBE0030ABAA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881672FA1AE43DBE0030ABAA /* DetailView.swift */; };
 		883CD9F11B1A1A7500BA5230 /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 883CD9F01B1A1A7500BA5230 /* Phone.png */; };
 		883CD9F31B1A1FEE00BA5230 /* WPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 883CD9F21B1A1FEE00BA5230 /* WPhone.png */; };
+		884BCFB51B231ED60005716A /* Card.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFB21B231ED60005716A /* Card.png */; };
+		884BCFB61B231ED60005716A /* AddImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFB31B231ED60005716A /* AddImg.png */; };
+		884BCFB71B231ED60005716A /* SeachImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFB41B231ED60005716A /* SeachImg.png */; };
+		884BCFB91B231F930005716A /* CallNoExpand.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFB81B231F930005716A /* CallNoExpand.png */; };
+		884BCFBB1B2320030005716A /* Card2.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFBA1B2320030005716A /* Card2.png */; };
+		884BCFBD1B23238F0005716A /* Title.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFBC1B23238F0005716A /* Title.png */; };
 		884C3E881B1A74D40025316B /* NameBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 884C3E861B1A74D30025316B /* NameBG.png */; };
 		884C3E891B1A74D40025316B /* CallBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 884C3E871B1A74D40025316B /* CallBG.png */; };
 		884C3E8B1B1A75150025316B /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 884C3E8A1B1A75150025316B /* Background.png */; };
@@ -70,6 +76,12 @@
 		881672FA1AE43DBE0030ABAA /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		883CD9F01B1A1A7500BA5230 /* Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone.png; sourceTree = "<group>"; };
 		883CD9F21B1A1FEE00BA5230 /* WPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WPhone.png; sourceTree = "<group>"; };
+		884BCFB21B231ED60005716A /* Card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Card.png; sourceTree = "<group>"; };
+		884BCFB31B231ED60005716A /* AddImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddImg.png; sourceTree = "<group>"; };
+		884BCFB41B231ED60005716A /* SeachImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SeachImg.png; sourceTree = "<group>"; };
+		884BCFB81B231F930005716A /* CallNoExpand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CallNoExpand.png; sourceTree = "<group>"; };
+		884BCFBA1B2320030005716A /* Card2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Card2.png; sourceTree = "<group>"; };
+		884BCFBC1B23238F0005716A /* Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Title.png; sourceTree = "<group>"; };
 		884C3E861B1A74D30025316B /* NameBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NameBG.png; sourceTree = "<group>"; };
 		884C3E871B1A74D40025316B /* CallBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CallBG.png; sourceTree = "<group>"; };
 		884C3E8A1B1A75150025316B /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
@@ -162,6 +174,12 @@
 			children = (
 				88D7217A1B1E8263008B1CF2 /* New Group */,
 				884C3E8C1B1A77CA0025316B /* CellHL.png */,
+				884BCFB21B231ED60005716A /* Card.png */,
+				884BCFBC1B23238F0005716A /* Title.png */,
+				884BCFB31B231ED60005716A /* AddImg.png */,
+				884BCFB41B231ED60005716A /* SeachImg.png */,
+				884BCFBA1B2320030005716A /* Card2.png */,
+				884BCFB81B231F930005716A /* CallNoExpand.png */,
 				88F69FF21B0917F8001C4BBB /* Rectangle.png */,
 				884C3E8A1B1A75150025316B /* Background.png */,
 				883CD9F21B1A1FEE00BA5230 /* WPhone.png */,
@@ -326,18 +344,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				884BCFB71B231ED60005716A /* SeachImg.png in Resources */,
 				88F69FF71B091B05001C4BBB /* RectBG.png in Resources */,
 				884C3E8B1B1A75150025316B /* Background.png in Resources */,
 				884C3E891B1A74D40025316B /* CallBG.png in Resources */,
+				884BCFB61B231ED60005716A /* AddImg.png in Resources */,
 				88D721791B1E8200008B1CF2 /* Main.storyboard in Resources */,
+				884BCFBD1B23238F0005716A /* Title.png in Resources */,
 				884C3E881B1A74D40025316B /* NameBG.png in Resources */,
 				884C3E8D1B1A77CA0025316B /* CellHL.png in Resources */,
 				88F69FF31B0917F8001C4BBB /* Rectangle.png in Resources */,
 				883CD9F11B1A1A7500BA5230 /* Phone.png in Resources */,
+				884BCFB91B231F930005716A /* CallNoExpand.png in Resources */,
 				88F69FF91B092149001C4BBB /* Favorite.png in Resources */,
 				88705F071AD9596C009E0F3C /* LaunchScreen.xib in Resources */,
 				88705F041AD9596C009E0F3C /* Images.xcassets in Resources */,
 				88D721A81B1E826C008B1CF2 /* LoadingView.xib in Resources */,
+				884BCFB51B231ED60005716A /* Card.png in Resources */,
+				884BCFBB1B2320030005716A /* Card2.png in Resources */,
 				883CD9F31B1A1FEE00BA5230 /* WPhone.png in Resources */,
 				88D721A51B1E826C008B1CF2 /* Info.plist in Resources */,
 			);
