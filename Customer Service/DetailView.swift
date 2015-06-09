@@ -31,6 +31,12 @@ class DetailView: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var hoursText: UITextField!
     
+    @IBAction func callClick(sender: AnyObject) {
+        
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numberText.text)")!)
+        performSegueWithIdentifier("mainSegue", sender: self)
+        
+    }
     @IBAction func saveButton(sender: AnyObject) {
         
         if isNew == false {

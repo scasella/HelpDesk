@@ -10,6 +10,10 @@
 		881672FB1AE43DBE0030ABAA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881672FA1AE43DBE0030ABAA /* DetailView.swift */; };
 		883CD9F11B1A1A7500BA5230 /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 883CD9F01B1A1A7500BA5230 /* Phone.png */; };
 		883CD9F31B1A1FEE00BA5230 /* WPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 883CD9F21B1A1FEE00BA5230 /* WPhone.png */; };
+		884547351B23982100A1DA33 /* saveImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 884547311B23982100A1DA33 /* saveImg.png */; };
+		884547361B23982100A1DA33 /* Card3.png in Resources */ = {isa = PBXBuildFile; fileRef = 884547321B23982100A1DA33 /* Card3.png */; };
+		884547371B23982100A1DA33 /* backImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 884547331B23982100A1DA33 /* backImg.png */; };
+		884547381B23982100A1DA33 /* callImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 884547341B23982100A1DA33 /* callImg.png */; };
 		884BCFB51B231ED60005716A /* Card.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFB21B231ED60005716A /* Card.png */; };
 		884BCFB61B231ED60005716A /* AddImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFB31B231ED60005716A /* AddImg.png */; };
 		884BCFB71B231ED60005716A /* SeachImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 884BCFB41B231ED60005716A /* SeachImg.png */; };
@@ -77,6 +81,10 @@
 		881672FA1AE43DBE0030ABAA /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		883CD9F01B1A1A7500BA5230 /* Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone.png; sourceTree = "<group>"; };
 		883CD9F21B1A1FEE00BA5230 /* WPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WPhone.png; sourceTree = "<group>"; };
+		884547311B23982100A1DA33 /* saveImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveImg.png; sourceTree = "<group>"; };
+		884547321B23982100A1DA33 /* Card3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Card3.png; sourceTree = "<group>"; };
+		884547331B23982100A1DA33 /* backImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backImg.png; sourceTree = "<group>"; };
+		884547341B23982100A1DA33 /* callImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = callImg.png; sourceTree = "<group>"; };
 		884BCFB21B231ED60005716A /* Card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Card.png; sourceTree = "<group>"; };
 		884BCFB31B231ED60005716A /* AddImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddImg.png; sourceTree = "<group>"; };
 		884BCFB41B231ED60005716A /* SeachImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SeachImg.png; sourceTree = "<group>"; };
@@ -181,6 +189,10 @@
 				884BCFB31B231ED60005716A /* AddImg.png */,
 				884BCFB41B231ED60005716A /* SeachImg.png */,
 				884BCFBA1B2320030005716A /* Card2.png */,
+				884547311B23982100A1DA33 /* saveImg.png */,
+				884547321B23982100A1DA33 /* Card3.png */,
+				884547331B23982100A1DA33 /* backImg.png */,
+				884547341B23982100A1DA33 /* callImg.png */,
 				884BCFB81B231F930005716A /* CallNoExpand.png */,
 				88F69FF21B0917F8001C4BBB /* Rectangle.png */,
 				884C3E8A1B1A75150025316B /* Background.png */,
@@ -360,11 +372,15 @@
 				883CD9F11B1A1A7500BA5230 /* Phone.png in Resources */,
 				884BCFB91B231F930005716A /* CallNoExpand.png in Resources */,
 				88F69FF91B092149001C4BBB /* Favorite.png in Resources */,
+				884547381B23982100A1DA33 /* callImg.png in Resources */,
 				88705F071AD9596C009E0F3C /* LaunchScreen.xib in Resources */,
+				884547361B23982100A1DA33 /* Card3.png in Resources */,
 				884BCFBF1B235DE60005716A /* HeartImg.png in Resources */,
 				88705F041AD9596C009E0F3C /* Images.xcassets in Resources */,
+				884547351B23982100A1DA33 /* saveImg.png in Resources */,
 				88D721A81B1E826C008B1CF2 /* LoadingView.xib in Resources */,
 				884BCFB51B231ED60005716A /* Card.png in Resources */,
+				884547371B23982100A1DA33 /* backImg.png in Resources */,
 				884BCFBB1B2320030005716A /* Card2.png in Resources */,
 				883CD9F31B1A1FEE00BA5230 /* WPhone.png in Resources */,
 				88D721A51B1E826C008B1CF2 /* Info.plist in Resources */,
@@ -535,8 +551,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Customer Service/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -548,8 +566,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Customer Service/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

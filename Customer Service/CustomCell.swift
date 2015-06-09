@@ -22,11 +22,11 @@ class CustomCell: UITableViewCell {
 
 class MainCell: UITableViewCell {
     
-    @IBOutlet var cellBG: UIImageView!
+
 
     @IBOutlet var cellLabel: UILabel!
     
-    @IBOutlet var callButton: UIButton!
+
     
     
     

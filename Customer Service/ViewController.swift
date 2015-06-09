@@ -18,28 +18,58 @@ var customNum = 0
 
 var favorites = [String]()
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate{
+    
+    @IBOutlet var searchBox: UITextField!
+ 
+    @IBOutlet var titleHeader: UIImageView!
+    
+    @IBAction func editChange(sender: AnyObject) {
+        
+        filteredNames.removeAll(keepCapacity: false)
+
+        
+        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchBox.text)
+        let array = (name as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        filteredNames = array as! [String]
+        if filteredNames.count < 1 {
+            
+         
+            
+        } else {
+            
+            mainTable.hidden = true
+   
+            
+        }
+        smallSearch.hidden = false
+        self.listTable!.reloadData()
+
+        }
+  
+    
+    @IBOutlet var smallSearch: SpringButton!
     
     @IBAction func searchButton(sender: AnyObject) {
         if mainTable.hidden == false {
-            
-            searchImg.animation = "flipX"
+         searchImg.animation = "flipX"
             searchImg.setImage(UIImage(named: "HeartImg.png"), forState: UIControlState.Normal)
             searchImg.duration = 0.25
             searchImg.animate()
         mainTable.hidden = true
         searchView.hidden = false
-        
             
         } else {
+            searchBox.resignFirstResponder()
+            searchView.hidden = true
+            smallSearch.hidden = true
+            mainTable.hidden = false
             
-            searchImg.animation = "flipX"
-            searchImg.setImage(UIImage(named: "SeachImg.png"), forState: UIControlState.Normal)
+             searchImg.animation = "flipX"
             searchImg.duration = 0.25
             searchImg.animate()
-            mainTable.hidden = false
-            searchView.hidden = true
-            
+            searchImg.setImage(UIImage(named: "SeachImg.png"), forState: UIControlState.Normal)
+             mainTable.reloadData()
         
         }
         
@@ -51,8 +81,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet var callNoExpand: SpringImageView!
     @IBOutlet var addButton: SpringButton!
-    
-    @IBOutlet var clearBGImage: UIImageView!
     
     //Fav Results Add Button
     func buttonClicked(sender:UIButton) {
@@ -73,23 +101,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
         
         listTable.reloadData()
-        
+        mainTable.reloadData()
         
     }
-    
-    
-    func mainCallClicked(sender:UIButton) {
-        
-        nameSet = sender.tag
-        isNew = false
-        performSegueWithIdentifier("customSegue", sender: self)
         
         
        /* var numLookup = numberCust[sender.tag]
         UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numLookup))")!)
         mainTable.reloadData()*/
-        
-    }
+
 
     
     @IBOutlet var mainTable: UITableView!
@@ -199,26 +219,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             hours + hoursCust
 
     
-        self.resultSearchController = ({
+        /* self.resultSearchController = ({
             let controller = UISearchController(searchResultsController: nil)
             controller.searchResultsUpdater = self
             controller.dimsBackgroundDuringPresentation = false
             controller.searchBar.sizeToFit()
+            controller.searchBar.frame = frame
+            controller.searchBar.backgroundImage = UIImage(named: "Background.png")
             controller.searchBar.delegate = self
+            self.resultSearchController.searchBar.delegate = self
             self.listTable!.tableHeaderView = controller.searchBar
             
-            return controller
+            return controller  })*/
             
-        })()
-        
- 
+       ()
+     
         
         }
     
     override func viewDidLoad(){
            super.viewDidLoad()
-        self.resultSearchController.searchBar.delegate = self
         
+
     }
     
         override func didReceiveMemoryWarning() {
@@ -227,7 +249,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 //Table Setup
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (self.resultSearchController.active) {
+        if searchBox.isFirstResponder() == true{
             return self.filteredNames.count
         } else if tableView == listTable {
          return 0
@@ -242,7 +264,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         {
             cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as! CustomCell;
         }
-        if (self.resultSearchController.active) {
+        if searchBox.isFirstResponder() == true  {
             cell.listLabel.text = filteredNames[indexPath.row] as String
            
             cell.addButton.tag = indexPath.row
@@ -259,9 +281,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else {
             var cell2 : MainCell! = mainTable.dequeueReusableCellWithIdentifier("Cell2") as! MainCell
             
-            cell2.callButton.tag = indexPath.row
+            
             cell2.cellLabel.text = favorites[indexPath.row]
-            cell2.callButton.addTarget(self, action: "mainCallClicked:", forControlEvents: UIControlEvents.TouchUpInside)
             
            
             if nameCust.count != 0 {
@@ -294,7 +315,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
     //Search controller
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+   /* func updateSearchResultsForSearchController(searchController: UISearchController) {
         
   
         filteredNames.removeAll(keepCapacity: false)
@@ -303,24 +324,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
          let array = (name as NSArray).filteredArrayUsingPredicate(searchPredicate)
         filteredNames = array as! [String]
         if filteredNames.count < 1 {
-            mainTable.reloadData()
-                    clearBGImage.hidden = true
+        
+    
+            
         } else {
+
             mainTable.hidden = true
-            clearBGImage.hidden = false
+    
 
         }
+            smallSearch.hidden = false
         self.listTable!.reloadData()
       
     }
     
     func presentSearchController(searchController: UISearchController) {
+        
         mainTable.hidden = true
-        clearBGImage.hidden = false
 
 
     }
 
+  
 
    //mainTable Acessory Button
      /* func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
@@ -354,7 +379,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }} */
     
     //Call number and change text color of row
-    
+    */
 
 
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -367,9 +392,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             currentCell.addButton.hidden = false
             currentCell.callButton.hidden = false
                 currentCell.listLabel.textColor = UIColor.whiteColor() }
+    
+    else {
+    callNoExpand.hidden = true
+    searchImg.hidden = true
+    addButton.hidden = true
+    isNew = false
+    performSegueWithIdentifier("customSegue", sender: self)
 
-            }
-            
+    
+    
+            }}
+    
            /* else {
         
             UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(number[nameSet]))")!)   USE FOR CALL BUTTON
@@ -386,9 +420,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             currentCell.listCellBG.image = UIImage(named: "")
             currentCell.addButton.hidden = true
             currentCell.callButton.hidden = true
-            currentCell.listLabel.textColor = UIColor.blackColor()}}
+                currentCell.listLabel.textColor = UIColor.blackColor()}}}
+    
+
         
-    }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
@@ -415,8 +450,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             mainTable.reloadData() }
         
-    }
-}
-
+        }
+    
+       }
+    
 
 
