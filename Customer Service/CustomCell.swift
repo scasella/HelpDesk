@@ -16,7 +16,8 @@ class CustomCell: UITableViewCell {
     
     @IBOutlet var callButton: UIButton!
     
-    @IBOutlet var listCellBG: UIImageView!
+    @IBOutlet var checkImg: UIImageView!
+    
 }
 
 

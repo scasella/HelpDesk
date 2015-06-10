@@ -20,7 +20,7 @@ var favorites = [String]()
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate{
     
-    @IBOutlet var searchBox: UITextField!
+    @IBOutlet var searchBox: SpringTextField!
  
     @IBOutlet var titleHeader: UIImageView!
     
@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         filteredNames.removeAll(keepCapacity: false)
 
         
-        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchBox.text)
+        let searchPredicate = NSPredicate(format: "SELF BEGINSWITH [c] %@", searchBox.text)
         let array = (name as NSArray).filteredArrayUsingPredicate(searchPredicate)
         filteredNames = array as! [String]
         if filteredNames.count < 1 {
@@ -52,6 +52,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func searchButton(sender: AnyObject) {
         if mainTable.hidden == false {
+            searchBox.animation = "morph"
+            searchBox.delay = 0.15
+            searchBox.duration = 1.15
+            searchBox.animate()
          searchImg.animation = "flipX"
             searchImg.setImage(UIImage(named: "HeartImg.png"), forState: UIControlState.Normal)
             searchImg.duration = 0.25
@@ -271,7 +275,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.addButton.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
             
             
-            cell.listCellBG.image = UIImage(named: "")
+
             cell.addButton.hidden = true
             cell.callButton.hidden = true
             cell.listLabel.textColor = UIColor.blackColor()
@@ -388,10 +392,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             if tableView == listTable {
             var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
-            currentCell.listCellBG.image = UIImage(named: "CellHL.png")
-            currentCell.addButton.hidden = false
+                if find(nameCust, currentCell.listLabel.text!) == nil{
+                    currentCell.addButton.hidden = false } else {
+                    currentCell.checkImg.hidden = false
+                }
             currentCell.callButton.hidden = false
-                currentCell.listLabel.textColor = UIColor.whiteColor() }
+                currentCell.listLabel.textColor = UIColor.blackColor() }
     
     else {
     callNoExpand.hidden = true
@@ -417,8 +423,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             if listTable.cellForRowAtIndexPath(indexPath) != nil {
             var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
-            currentCell.listCellBG.image = UIImage(named: "")
-            currentCell.addButton.hidden = true
+               currentCell.addButton.hidden = true
+                 currentCell.checkImg.hidden = true
             currentCell.callButton.hidden = true
                 currentCell.listLabel.textColor = UIColor.blackColor()}}}
     
