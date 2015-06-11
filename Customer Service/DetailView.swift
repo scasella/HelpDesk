@@ -137,10 +137,10 @@ class DetailView: UIViewController, UITextFieldDelegate {
 
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         if textField == numberText {
-            if count(numberText.text) == 8 || count(numberText.text) == 0 {
+            if count(numberText.text) == 10 || count(numberText.text) == 0 {
                 return true } else {
                 numberText.text = ""
-                numberText.placeholder = "Enter phone number format 1112223333"
+                numberText.placeholder = "Number format 1112223333"
                 return true}
             
         }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880C85D61B293E42003AA21D /* hours.json in Resources */ = {isa = PBXBuildFile; fileRef = 880C85D31B293E42003AA21D /* hours.json */; };
+		880C85D71B293E42003AA21D /* names.json in Resources */ = {isa = PBXBuildFile; fileRef = 880C85D41B293E42003AA21D /* names.json */; };
+		880C85D81B293E42003AA21D /* numbers.json in Resources */ = {isa = PBXBuildFile; fileRef = 880C85D51B293E42003AA21D /* numbers.json */; };
 		881672FB1AE43DBE0030ABAA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881672FA1AE43DBE0030ABAA /* DetailView.swift */; };
 		884547351B23982100A1DA33 /* saveImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 884547311B23982100A1DA33 /* saveImg.png */; };
 		884547361B23982100A1DA33 /* Card3.png in Resources */ = {isa = PBXBuildFile; fileRef = 884547321B23982100A1DA33 /* Card3.png */; };
@@ -70,6 +73,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		880C85D31B293E42003AA21D /* hours.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hours.json; sourceTree = "<group>"; };
+		880C85D41B293E42003AA21D /* names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = names.json; sourceTree = "<group>"; };
+		880C85D51B293E42003AA21D /* numbers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = numbers.json; sourceTree = "<group>"; };
 		881672FA1AE43DBE0030ABAA /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		884547311B23982100A1DA33 /* saveImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveImg.png; sourceTree = "<group>"; };
 		884547321B23982100A1DA33 /* Card3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Card3.png; sourceTree = "<group>"; };
@@ -167,6 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				88D7217A1B1E8263008B1CF2 /* New Group */,
+				880C85D31B293E42003AA21D /* hours.json */,
+				880C85D41B293E42003AA21D /* names.json */,
+				880C85D51B293E42003AA21D /* numbers.json */,
 				884BCFBC1B23238F0005716A /* Title.png */,
 				884BCFB31B231ED60005716A /* AddImg.png */,
 				884BCFB41B231ED60005716A /* SeachImg.png */,
@@ -344,10 +353,13 @@
 				884547381B23982100A1DA33 /* callImg.png in Resources */,
 				885CB9291B27C2F500D91BBE /* heartImg3.png in Resources */,
 				88705F071AD9596C009E0F3C /* LaunchScreen.xib in Resources */,
+				880C85D71B293E42003AA21D /* names.json in Resources */,
 				884547361B23982100A1DA33 /* Card3.png in Resources */,
 				88705F041AD9596C009E0F3C /* Images.xcassets in Resources */,
+				880C85D81B293E42003AA21D /* numbers.json in Resources */,
 				885CB92A1B27C2F500D91BBE /* heartCell2.png in Resources */,
 				884547351B23982100A1DA33 /* saveImg.png in Resources */,
+				880C85D61B293E42003AA21D /* hours.json in Resources */,
 				88D721A81B1E826C008B1CF2 /* LoadingView.xib in Resources */,
 				884547371B23982100A1DA33 /* backImg.png in Resources */,
 				885CB92B1B27C2F500D91BBE /* callCell2.png in Resources */,
@@ -468,7 +480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -504,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

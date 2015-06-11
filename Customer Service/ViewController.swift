@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 var nameSet: Int = 0
 
@@ -52,6 +53,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func searchButton(sender: AnyObject) {
         if mainTable.hidden == false {
+            searchBox.text = ""
+            listTable.reloadData()
             searchBox.animation = "morph"
             searchBox.delay = 0.15
             searchBox.duration = 1.15
@@ -61,6 +64,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             searchImg.duration = 0.25
             searchImg.animate()
         mainTable.hidden = true
+            
         searchView.hidden = false
             
         } else {
@@ -134,7 +138,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var filteredNames = [String]()
 
     
-    //Download and load saved stuff
+    //Create directory arrays
     override func viewWillAppear(animated: Bool) {
         
         if NSUserDefaults.standardUserDefaults().objectForKey("favorites") != nil {
@@ -143,99 +147,53 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         nameCust = NSUserDefaults.standardUserDefaults().objectForKey("nameCust") as! [String]
         numberCust = NSUserDefaults.standardUserDefaults().objectForKey("numberCust") as! [String]
         hoursCust = NSUserDefaults.standardUserDefaults().objectForKey("hoursCust") as! [String] }
-            
-            let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
+        
+        var namePath = NSBundle.mainBundle().pathForResource("names", ofType: "json")
+        var nameUrl = NSURL.fileURLWithPath(namePath!)
+        var error: NSError?
+        let nameContent = NSString(contentsOfFile: namePath!, encoding:NSUTF8StringEncoding, error: &error)
+        if nameContent != nil {
+           var nameReformat = nameContent!.componentsSeparatedByString(",")
+            for index in nameReformat {
+                  name.append(index as! String)
+            }
                 
-                var urlError = false
-                
-                if error == nil {
-                    
-                    var urlContent = NSString(data: data, encoding: NSUTF8StringEncoding) as NSString!
-                    
-                    var urlContentArray = urlContent.componentsSeparatedByString(",")
-                    
-                    for index in urlContentArray {
-                        
-                        name.append(index as! String)
-                        
-                    }
-                    
-                } else {
-                    
-                    urlError=true
-                    
-                    println("error")}
-            })
             
-            task.resume()
+        }
+        else {
+            println("error: \(error)")
+        }
+        
+        var numbersPath = NSBundle.mainBundle().pathForResource("numbers", ofType: "json")
+        var numbersUrl = NSURL.fileURLWithPath(numbersPath!)
+        let numbersContent = NSString(contentsOfFile: numbersPath!, encoding:NSUTF8StringEncoding, error: &error)
+        if numbersContent != nil {
+            var numbersReformat = numbersContent!.componentsSeparatedByString(",")
+            for index in numbersReformat {
+                number.append(index as! String)
+            }
             
-           name + nameCust
+            
+        }
+        else {
+            println("error: \(error)")
+        }
+        
+        var hoursPath = NSBundle.mainBundle().pathForResource("hours", ofType: "json")
+        var hoursUrl = NSURL.fileURLWithPath(hoursPath!)
+        let hoursContent = NSString(contentsOfFile: hoursPath!, encoding:NSUTF8StringEncoding, error: &error)
+        if hoursContent != nil {
+            var hoursReformat = hoursContent!.componentsSeparatedByString(",")
+            for index in hoursReformat {
+                hours.append(index as! String)
+            }
+            
+            
+        }
+        else {
+            println("error: \(error)")
+        }
 
-            let task2 = NSURLSession.sharedSession().dataTaskWithURL(url2!, completionHandler: { (data, response, error) -> Void in
-                
-                var urlError = false
-                
-                if error == nil {
-                    
-                    var urlContent = NSString(data: data, encoding: NSUTF8StringEncoding) as NSString!
-                    
-                    var urlContentArray = urlContent.componentsSeparatedByString(",")
-                    
-                    for index in urlContentArray {
-                        number.append(index as! String)
-                        
-                    }
-                    
-                } else {
-                    
-                    urlError=true
-                    println("error")}
-            })
-            
-            task2.resume()
-            
-            number + numberCust
-
-            let task3 = NSURLSession.sharedSession().dataTaskWithURL(url3!, completionHandler: { (data, response, error) -> Void in
-                
-                var urlError = false
-                
-                if error == nil {
-                    
-                    var urlContent = NSString(data: data, encoding: NSUTF8StringEncoding) as NSString!
-                    
-                    var urlContentArray = urlContent.componentsSeparatedByString(",")
-                    
-                    for index in urlContentArray {
-                     hours.append(index as! String)
-                        
-                    }
-                    
-                } else {
-                    
-                    urlError=true
-                    
-                    println("error")}
-            })
-            
-            task3.resume()
-            
-            hours + hoursCust
-
-    
-        /* self.resultSearchController = ({
-            let controller = UISearchController(searchResultsController: nil)
-            controller.searchResultsUpdater = self
-            controller.dimsBackgroundDuringPresentation = false
-            controller.searchBar.sizeToFit()
-            controller.searchBar.frame = frame
-            controller.searchBar.backgroundImage = UIImage(named: "Background.png")
-            controller.searchBar.delegate = self
-            self.resultSearchController.searchBar.delegate = self
-            self.listTable!.tableHeaderView = controller.searchBar
-            
-            return controller  })*/
-            
        ()
      
         
@@ -243,7 +201,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad(){
            super.viewDidLoad()
-        
 
     }
     
@@ -251,6 +208,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 //Table Setup
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchBox.isFirstResponder() == true{
@@ -293,21 +251,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
             var bgSet: Int = find(nameCust, cell2.cellLabel.text!)!
     
-            /*switch bgSet {
-            case 0 : cell2.cellBG.image = UIImage(named: "orangeItem.png")
-            case 1 : cell2.cellBG.image = UIImage(named: "greenItem.png")
-            case 2 : cell2.cellBG.image = UIImage(named: "pinkItem.png")
-            case 3 : cell2.cellBG.image = UIImage(named: "blueItem.png")
-            case 4 :  cell2.cellBG.image = UIImage(named: "purpleItem.png"); prevBG = "orangeItem.png"
-            default : switch prevBG {
-            case "orangeItem.png" : cell2.cellBG.image = UIImage(named: "orangeItem.png"); prevBG = "greenItem.png"
-            case "greenItem.png" : cell2.cellBG.image = UIImage(named: "greenItem.png"); prevBG = "pinkItem.png"
-            case "pinkItem.png" : cell2.cellBG.image = UIImage(named: "pinkItem.png"); prevBG = "blueItem.png"
-            case "blueItem.png" : cell2.cellBG.image = UIImage(named: "blueItem.png"); prevBG = "purpleItem.png"
-            default : cell2.cellBG.image = UIImage(named: "purpleItem.png"); prevBG = "orangeItem.png"
-                }
-                }*/
-                
+    
             }
 
             
@@ -316,75 +260,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell2}
     }
     
-
-
-    //Search controller
-   /* func updateSearchResultsForSearchController(searchController: UISearchController) {
-        
-  
-        filteredNames.removeAll(keepCapacity: false)
-        
-        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
-         let array = (name as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        filteredNames = array as! [String]
-        if filteredNames.count < 1 {
-        
-    
-            
-        } else {
-
-            mainTable.hidden = true
-    
-
-        }
-            smallSearch.hidden = false
-        self.listTable!.reloadData()
-      
-    }
-    
-    func presentSearchController(searchController: UISearchController) {
-        
-        mainTable.hidden = true
-
-
-    }
-
-  
-
-   //mainTable Acessory Button
-     /* func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
-        if tableView == mainTable {
-            
-            newSave = false
-            
-            fromList = false
-            
-            isUpdating = true
-            
-            nameString = "\(favorites[indexPath.row])"
-            
-            nameSet = indexPath.row
-            
-            performSegueWithIdentifier("detailSegue", sender: self)
-        
-        } else {
-            
-            newSave = false
-            
-            isUpdating = true 
-            
-            fromList = true
-            
-            nameString = "\(name[find(name, filteredNames[indexPath.row])!])"
-            
-            nameSet = find(name, nameString)!
-            
-            performSegueWithIdentifier("detailSegue", sender: self)
-        }} */
-    
-    //Call number and change text color of row
-    */
-
 
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             
