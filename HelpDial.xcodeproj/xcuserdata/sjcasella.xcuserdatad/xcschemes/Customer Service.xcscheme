@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "88705EF61AD9596C009E0F3C"
-               BuildableName = "Customer Service.app"
-               BlueprintName = "Customer Service"
-               ReferencedContainer = "container:Customer Service.xcodeproj">
+               BuildableName = "HelpDial.app"
+               BlueprintName = "HelpDial"
+               ReferencedContainer = "container:HelpDial.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "88705F0B1AD9596C009E0F3C"
-               BuildableName = "Customer ServiceTests.xctest"
-               BlueprintName = "Customer ServiceTests"
-               ReferencedContainer = "container:Customer Service.xcodeproj">
+               BuildableName = "HelpDialTests.xctest"
+               BlueprintName = "HelpDialTests"
+               ReferencedContainer = "container:HelpDial.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "88705F0B1AD9596C009E0F3C"
-               BuildableName = "Customer ServiceTests.xctest"
-               BlueprintName = "Customer ServiceTests"
-               ReferencedContainer = "container:Customer Service.xcodeproj">
+               BuildableName = "HelpDialTests.xctest"
+               BlueprintName = "HelpDialTests"
+               ReferencedContainer = "container:HelpDial.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "88705EF61AD9596C009E0F3C"
-            BuildableName = "Customer Service.app"
-            BlueprintName = "Customer Service"
-            ReferencedContainer = "container:Customer Service.xcodeproj">
+            BuildableName = "HelpDial.app"
+            BlueprintName = "HelpDial"
+            ReferencedContainer = "container:HelpDial.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "88705EF61AD9596C009E0F3C"
-            BuildableName = "Customer Service.app"
-            BlueprintName = "Customer Service"
-            ReferencedContainer = "container:Customer Service.xcodeproj">
+            BuildableName = "HelpDial.app"
+            BlueprintName = "HelpDial"
+            ReferencedContainer = "container:HelpDial.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "88705EF61AD9596C009E0F3C"
-            BuildableName = "Customer Service.app"
-            BlueprintName = "Customer Service"
-            ReferencedContainer = "container:Customer Service.xcodeproj">
+            BuildableName = "HelpDial.app"
+            BlueprintName = "HelpDial"
+            ReferencedContainer = "container:HelpDial.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

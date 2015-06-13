@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Foundation
 
 var nameSet: Int = 0
 
@@ -19,11 +18,13 @@ var customNum = 0
 
 var favorites = [String]()
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UITextFieldDelegate{
     
     @IBOutlet var searchBox: SpringTextField!
  
     @IBOutlet var titleHeader: UIImageView!
+    
+    @IBOutlet var addmore: UILabel!
     
     @IBAction func editChange(sender: AnyObject) {
         
@@ -60,7 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             searchBox.duration = 1.15
             searchBox.animate()
          searchImg.animation = "flipX"
-            searchImg.setImage(UIImage(named: "HeartImg.png"), forState: UIControlState.Normal)
+            searchImg.setImage(UIImage(named: "heartImg.png"), forState: UIControlState.Normal)
             searchImg.duration = 0.25
             searchImg.animate()
         mainTable.hidden = true
@@ -241,8 +242,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
             
         } else {
+            if tableView == mainTable {
+                
             var cell2 : MainCell! = mainTable.dequeueReusableCellWithIdentifier("Cell2") as! MainCell
-            
             
             cell2.cellLabel.text = favorites[indexPath.row]
             
@@ -250,16 +252,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if nameCust.count != 0 {
                 
             var bgSet: Int = find(nameCust, cell2.cellLabel.text!)!
-    
-    
+
+                
             }
 
             
             //cell2.accessoryType = .DetailButton
             
-            return cell2}
-    }
-    
+            return cell2
+        }
+            return cell
+        }}
 
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             
@@ -331,9 +334,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             mainTable.reloadData() }
         
-        }
+    }
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+      
+        searchView.hidden = true
+        smallSearch.hidden = true
+        
+        
+        searchImg.animation = "flipX"
+        searchImg.duration = 0.25
+        searchImg.animate()
+        searchImg.setImage(UIImage(named: "SeachImg.png"), forState: UIControlState.Normal)
+      
+
+        return true
+
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+          mainTable.hidden = false
+        mainTable.reloadData()
+    }
     
        }
-    
+
 
 

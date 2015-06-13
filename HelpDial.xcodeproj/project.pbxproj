@@ -23,11 +23,20 @@
 		885CB92A1B27C2F500D91BBE /* heartCell2.png in Resources */ = {isa = PBXBuildFile; fileRef = 885CB9261B27C2F500D91BBE /* heartCell2.png */; };
 		885CB92B1B27C2F500D91BBE /* callCell2.png in Resources */ = {isa = PBXBuildFile; fileRef = 885CB9271B27C2F500D91BBE /* callCell2.png */; };
 		885CB92C1B27C2F500D91BBE /* checkCell2.png in Resources */ = {isa = PBXBuildFile; fileRef = 885CB9281B27C2F500D91BBE /* checkCell2.png */; };
+		886F90B91B2BCB5B00B29DF2 /* ClearCall2.png in Resources */ = {isa = PBXBuildFile; fileRef = 886F90B81B2BCB5B00B29DF2 /* ClearCall2.png */; };
 		88705EFD1AD9596C009E0F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88705EFC1AD9596C009E0F3C /* AppDelegate.swift */; };
 		88705EFF1AD9596C009E0F3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88705EFE1AD9596C009E0F3C /* ViewController.swift */; };
 		88705F041AD9596C009E0F3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88705F031AD9596C009E0F3C /* Images.xcassets */; };
 		88705F071AD9596C009E0F3C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88705F051AD9596C009E0F3C /* LaunchScreen.xib */; };
 		88705F131AD9596C009E0F3C /* Customer_ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88705F121AD9596C009E0F3C /* Customer_ServiceTests.swift */; };
+		887519421B2CAD29003184CB /* callLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 887519411B2CAD29003184CB /* callLogo.png */; };
+		889108881B2CC145001B253E /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889108821B2CC145001B253E /* Icon-60@3x.png */; };
+		889108891B2CC145001B253E /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889108831B2CC145001B253E /* Icon-60@2x.png */; };
+		8891088A1B2CC145001B253E /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889108841B2CC145001B253E /* Icon-40@3x.png */; };
+		8891088B1B2CC145001B253E /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889108851B2CC145001B253E /* Icon-40@2x.png */; };
+		8891088C1B2CC145001B253E /* Icon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889108861B2CC145001B253E /* Icon-29@3x.png */; };
+		8891088D1B2CC145001B253E /* Icon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889108871B2CC145001B253E /* Icon-29@2x.png */; };
+		8891088F1B2CEC7E001B253E /* helpDial.png in Resources */ = {isa = PBXBuildFile; fileRef = 8891088E1B2CEC7E001B253E /* helpDial.png */; };
 		88D721791B1E8200008B1CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88D721781B1E8200008B1CF2 /* Main.storyboard */; };
 		88D721991B1E826C008B1CF2 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D7217B1B1E826C008B1CF2 /* AsyncButton.swift */; };
 		88D7219A1B1E826C008B1CF2 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D7217C1B1E826C008B1CF2 /* AsyncImageView.swift */; };
@@ -58,6 +67,8 @@
 		88D721B31B1E826C008B1CF2 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D721961B1E826C008B1CF2 /* TransitionManager.swift */; };
 		88D721B41B1E826C008B1CF2 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D721971B1E826C008B1CF2 /* TransitionZoom.swift */; };
 		88D721B51B1E826C008B1CF2 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D721981B1E826C008B1CF2 /* UnwindSegue.swift */; };
+		88E52C2B1B2BA73300DC1CD0 /* heartImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E52C2A1B2BA73300DC1CD0 /* heartImg.png */; };
+		88E52C2D1B2BCAE300DC1CD0 /* ClearCallImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E52C2C1B2BCAE300DC1CD0 /* ClearCallImg.png */; };
 		88F22B7F1AD96CF900282A80 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F22B7E1AD96CF900282A80 /* Directory.swift */; };
 		88F69FF11B08FC40001C4BBB /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F69FF01B08FC40001C4BBB /* CustomCell.swift */; };
 /* End PBXBuildFile section */
@@ -89,15 +100,24 @@
 		885CB9261B27C2F500D91BBE /* heartCell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartCell2.png; sourceTree = "<group>"; };
 		885CB9271B27C2F500D91BBE /* callCell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = callCell2.png; sourceTree = "<group>"; };
 		885CB9281B27C2F500D91BBE /* checkCell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkCell2.png; sourceTree = "<group>"; };
-		88705EF71AD9596C009E0F3C /* Customer Service.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Customer Service.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		886F90B81B2BCB5B00B29DF2 /* ClearCall2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClearCall2.png; sourceTree = "<group>"; };
+		88705EF71AD9596C009E0F3C /* HelpDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88705EFB1AD9596C009E0F3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88705EFC1AD9596C009E0F3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88705EFE1AD9596C009E0F3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		88705F031AD9596C009E0F3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		88705F061AD9596C009E0F3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		88705F0C1AD9596C009E0F3C /* Customer ServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Customer ServiceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88705F0C1AD9596C009E0F3C /* HelpDialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpDialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88705F111AD9596C009E0F3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88705F121AD9596C009E0F3C /* Customer_ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer_ServiceTests.swift; sourceTree = "<group>"; };
+		887519411B2CAD29003184CB /* callLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = callLogo.png; sourceTree = "<group>"; };
+		889108821B2CC145001B253E /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		889108831B2CC145001B253E /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		889108841B2CC145001B253E /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@3x.png"; sourceTree = "<group>"; };
+		889108851B2CC145001B253E /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		889108861B2CC145001B253E /* Icon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29@3x.png"; sourceTree = "<group>"; };
+		889108871B2CC145001B253E /* Icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29@2x.png"; sourceTree = "<group>"; };
+		8891088E1B2CEC7E001B253E /* helpDial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = helpDial.png; sourceTree = "<group>"; };
 		88D721781B1E8200008B1CF2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		88D7217B1B1E826C008B1CF2 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncButton.swift; path = Spring/AsyncButton.swift; sourceTree = "<group>"; };
 		88D7217C1B1E826C008B1CF2 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncImageView.swift; path = Spring/AsyncImageView.swift; sourceTree = "<group>"; };
@@ -129,6 +149,8 @@
 		88D721961B1E826C008B1CF2 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionManager.swift; path = Spring/TransitionManager.swift; sourceTree = "<group>"; };
 		88D721971B1E826C008B1CF2 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionZoom.swift; path = Spring/TransitionZoom.swift; sourceTree = "<group>"; };
 		88D721981B1E826C008B1CF2 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnwindSegue.swift; path = Spring/UnwindSegue.swift; sourceTree = "<group>"; };
+		88E52C2A1B2BA73300DC1CD0 /* heartImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartImg.png; sourceTree = "<group>"; };
+		88E52C2C1B2BCAE300DC1CD0 /* ClearCallImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClearCallImg.png; sourceTree = "<group>"; };
 		88F22B7E1AD96CF900282A80 /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		88F69FF01B08FC40001C4BBB /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,8 +185,8 @@
 		88705EF81AD9596C009E0F3C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				88705EF71AD9596C009E0F3C /* Customer Service.app */,
-				88705F0C1AD9596C009E0F3C /* Customer ServiceTests.xctest */,
+				88705EF71AD9596C009E0F3C /* HelpDial.app */,
+				88705F0C1AD9596C009E0F3C /* HelpDialTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,9 +198,20 @@
 				880C85D31B293E42003AA21D /* hours.json */,
 				880C85D41B293E42003AA21D /* names.json */,
 				880C85D51B293E42003AA21D /* numbers.json */,
+				889108821B2CC145001B253E /* Icon-60@3x.png */,
+				889108831B2CC145001B253E /* Icon-60@2x.png */,
+				889108841B2CC145001B253E /* Icon-40@3x.png */,
+				889108851B2CC145001B253E /* Icon-40@2x.png */,
+				8891088E1B2CEC7E001B253E /* helpDial.png */,
+				889108861B2CC145001B253E /* Icon-29@3x.png */,
+				889108871B2CC145001B253E /* Icon-29@2x.png */,
 				884BCFBC1B23238F0005716A /* Title.png */,
 				884BCFB31B231ED60005716A /* AddImg.png */,
 				884BCFB41B231ED60005716A /* SeachImg.png */,
+				88E52C2C1B2BCAE300DC1CD0 /* ClearCallImg.png */,
+				886F90B81B2BCB5B00B29DF2 /* ClearCall2.png */,
+				88E52C2A1B2BA73300DC1CD0 /* heartImg.png */,
+				887519411B2CAD29003184CB /* callLogo.png */,
 				884547311B23982100A1DA33 /* saveImg.png */,
 				884547321B23982100A1DA33 /* Card3.png */,
 				884547331B23982100A1DA33 /* backImg.png */,
@@ -266,9 +299,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		88705EF61AD9596C009E0F3C /* Customer Service */ = {
+		88705EF61AD9596C009E0F3C /* HelpDial */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88705F161AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "Customer Service" */;
+			buildConfigurationList = 88705F161AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "HelpDial" */;
 			buildPhases = (
 				88705EF31AD9596C009E0F3C /* Sources */,
 				88705EF41AD9596C009E0F3C /* Frameworks */,
@@ -278,14 +311,14 @@
 			);
 			dependencies = (
 			);
-			name = "Customer Service";
+			name = HelpDial;
 			productName = "Customer Service";
-			productReference = 88705EF71AD9596C009E0F3C /* Customer Service.app */;
+			productReference = 88705EF71AD9596C009E0F3C /* HelpDial.app */;
 			productType = "com.apple.product-type.application";
 		};
-		88705F0B1AD9596C009E0F3C /* Customer ServiceTests */ = {
+		88705F0B1AD9596C009E0F3C /* HelpDialTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88705F191AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "Customer ServiceTests" */;
+			buildConfigurationList = 88705F191AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "HelpDialTests" */;
 			buildPhases = (
 				88705F081AD9596C009E0F3C /* Sources */,
 				88705F091AD9596C009E0F3C /* Frameworks */,
@@ -296,9 +329,9 @@
 			dependencies = (
 				88705F0E1AD9596C009E0F3C /* PBXTargetDependency */,
 			);
-			name = "Customer ServiceTests";
+			name = HelpDialTests;
 			productName = "Customer ServiceTests";
-			productReference = 88705F0C1AD9596C009E0F3C /* Customer ServiceTests.xctest */;
+			productReference = 88705F0C1AD9596C009E0F3C /* HelpDialTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -307,6 +340,7 @@
 		88705EEF1AD9596C009E0F3C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Stephen Casella";
 				TargetAttributes = {
@@ -320,7 +354,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 88705EF21AD9596C009E0F3C /* Build configuration list for PBXProject "Customer Service" */;
+			buildConfigurationList = 88705EF21AD9596C009E0F3C /* Build configuration list for PBXProject "HelpDial" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -333,8 +367,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88705EF61AD9596C009E0F3C /* Customer Service */,
-				88705F0B1AD9596C009E0F3C /* Customer ServiceTests */,
+				88705EF61AD9596C009E0F3C /* HelpDial */,
+				88705F0B1AD9596C009E0F3C /* HelpDialTests */,
 			);
 		};
 /* End PBXProject section */
@@ -345,25 +379,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				884BCFB71B231ED60005716A /* SeachImg.png in Resources */,
+				889108881B2CC145001B253E /* Icon-60@3x.png in Resources */,
 				884BCFB61B231ED60005716A /* AddImg.png in Resources */,
+				8891088F1B2CEC7E001B253E /* helpDial.png in Resources */,
 				88D721791B1E8200008B1CF2 /* Main.storyboard in Resources */,
+				8891088A1B2CC145001B253E /* Icon-40@3x.png in Resources */,
 				884BCFBD1B23238F0005716A /* Title.png in Resources */,
 				885CB92C1B27C2F500D91BBE /* checkCell2.png in Resources */,
 				884BCFB91B231F930005716A /* CallNoExpand.png in Resources */,
 				884547381B23982100A1DA33 /* callImg.png in Resources */,
 				885CB9291B27C2F500D91BBE /* heartImg3.png in Resources */,
+				8891088C1B2CC145001B253E /* Icon-29@3x.png in Resources */,
 				88705F071AD9596C009E0F3C /* LaunchScreen.xib in Resources */,
 				880C85D71B293E42003AA21D /* names.json in Resources */,
 				884547361B23982100A1DA33 /* Card3.png in Resources */,
 				88705F041AD9596C009E0F3C /* Images.xcassets in Resources */,
+				887519421B2CAD29003184CB /* callLogo.png in Resources */,
 				880C85D81B293E42003AA21D /* numbers.json in Resources */,
+				889108891B2CC145001B253E /* Icon-60@2x.png in Resources */,
 				885CB92A1B27C2F500D91BBE /* heartCell2.png in Resources */,
 				884547351B23982100A1DA33 /* saveImg.png in Resources */,
+				88E52C2B1B2BA73300DC1CD0 /* heartImg.png in Resources */,
 				880C85D61B293E42003AA21D /* hours.json in Resources */,
 				88D721A81B1E826C008B1CF2 /* LoadingView.xib in Resources */,
 				884547371B23982100A1DA33 /* backImg.png in Resources */,
+				88E52C2D1B2BCAE300DC1CD0 /* ClearCallImg.png in Resources */,
 				885CB92B1B27C2F500D91BBE /* callCell2.png in Resources */,
+				8891088B1B2CC145001B253E /* Icon-40@2x.png in Resources */,
 				88D721A51B1E826C008B1CF2 /* Info.plist in Resources */,
+				8891088D1B2CC145001B253E /* Icon-29@2x.png in Resources */,
+				886F90B91B2BCB5B00B29DF2 /* ClearCall2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +474,7 @@
 /* Begin PBXTargetDependency section */
 		88705F0E1AD9596C009E0F3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 88705EF61AD9596C009E0F3C /* Customer Service */;
+			target = 88705EF61AD9596C009E0F3C /* HelpDial */;
 			targetProxy = 88705F0D1AD9596C009E0F3C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -484,7 +529,9 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -518,7 +565,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -532,7 +581,7 @@
 				INFOPLIST_FILE = "Customer Service/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HelpDial;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -547,7 +596,7 @@
 				INFOPLIST_FILE = "Customer Service/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HelpDial;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -567,7 +616,7 @@
 				);
 				INFOPLIST_FILE = "Customer ServiceTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HelpDialTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Customer Service.app/Customer Service";
 			};
 			name = Debug;
@@ -582,7 +631,7 @@
 				);
 				INFOPLIST_FILE = "Customer ServiceTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HelpDialTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Customer Service.app/Customer Service";
 			};
 			name = Release;
@@ -590,7 +639,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		88705EF21AD9596C009E0F3C /* Build configuration list for PBXProject "Customer Service" */ = {
+		88705EF21AD9596C009E0F3C /* Build configuration list for PBXProject "HelpDial" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88705F141AD9596C009E0F3C /* Debug */,
@@ -599,7 +648,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88705F161AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "Customer Service" */ = {
+		88705F161AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "HelpDial" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88705F171AD9596C009E0F3C /* Debug */,
@@ -608,7 +657,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88705F191AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "Customer ServiceTests" */ = {
+		88705F191AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "HelpDialTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88705F1A1AD9596C009E0F3C /* Debug */,

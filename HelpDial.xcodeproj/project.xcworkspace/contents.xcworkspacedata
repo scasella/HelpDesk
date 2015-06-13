@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Customer Service.xcodeproj">
+      location = "self:/Users/sjcasella/Desktop/Apps/HelpDesk/HelpDial.xcodeproj">
    </FileRef>
 </Workspace>
