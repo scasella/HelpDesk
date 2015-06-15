@@ -113,7 +113,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mainTable.reloadData()
         
     }
-        
+    
+    @IBAction func callNow(sender: UIButton) {
+        var numLookup = sender.tag
+        var rightNum = find(name, filteredNames[numLookup])
+         UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(number[rightNum!])")!)
+    }
+   
+
         
        /* var numLookup = numberCust[sender.tag]
         UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numLookup))")!)
@@ -149,12 +156,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         numberCust = NSUserDefaults.standardUserDefaults().objectForKey("numberCust") as! [String]
         hoursCust = NSUserDefaults.standardUserDefaults().objectForKey("hoursCust") as! [String] }
         
-        var namePath = NSBundle.mainBundle().pathForResource("names", ofType: "json")
+        var namePath = NSBundle.mainBundle().pathForResource("name", ofType: "txt")
         var nameUrl = NSURL.fileURLWithPath(namePath!)
         var error: NSError?
         let nameContent = NSString(contentsOfFile: namePath!, encoding:NSUTF8StringEncoding, error: &error)
         if nameContent != nil {
-           var nameReformat = nameContent!.componentsSeparatedByString(",")
+           var nameReformat = nameContent!.componentsSeparatedByString("=")
             for index in nameReformat {
                   name.append(index as! String)
             }
@@ -164,27 +171,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         else {
             println("error: \(error)")
         }
-        
-        var numbersPath = NSBundle.mainBundle().pathForResource("numbers", ofType: "json")
+        println(name.count)
+        var numbersPath = NSBundle.mainBundle().pathForResource("numbers", ofType: "txt")
         var numbersUrl = NSURL.fileURLWithPath(numbersPath!)
         let numbersContent = NSString(contentsOfFile: numbersPath!, encoding:NSUTF8StringEncoding, error: &error)
         if numbersContent != nil {
-            var numbersReformat = numbersContent!.componentsSeparatedByString(",")
+            var numbersReformat = numbersContent!.componentsSeparatedByString("=")
             for index in numbersReformat {
                 number.append(index as! String)
             }
-            
+        
             
         }
         else {
             println("error: \(error)")
         }
-        
-        var hoursPath = NSBundle.mainBundle().pathForResource("hours", ofType: "json")
+            println(number.count)
+        var hoursPath = NSBundle.mainBundle().pathForResource("hours", ofType: "txt")
         var hoursUrl = NSURL.fileURLWithPath(hoursPath!)
         let hoursContent = NSString(contentsOfFile: hoursPath!, encoding:NSUTF8StringEncoding, error: &error)
         if hoursContent != nil {
-            var hoursReformat = hoursContent!.componentsSeparatedByString(",")
+            var hoursReformat = hoursContent!.componentsSeparatedByString("=")
             for index in hoursReformat {
                 hours.append(index as! String)
             }
@@ -194,6 +201,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         else {
             println("error: \(error)")
         }
+        println(hours.count)
 
        ()
      
@@ -231,8 +239,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.listLabel.text = filteredNames[indexPath.row] as String
            
             cell.addButton.tag = indexPath.row
+             cell.callButton.tag = indexPath.row
             cell.addButton.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
-            
+            cell.callButton.addTarget(self, action: "callNow:", forControlEvents: UIControlEvents.TouchUpInside)
             
 
             cell.addButton.hidden = true
@@ -288,12 +297,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
             }}
     
-           /* else {
-        
-            UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(number[nameSet]))")!)   USE FOR CALL BUTTON
-                
-            } */
-        
+    
 
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
