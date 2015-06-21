@@ -54,6 +54,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func searchButton(sender: AnyObject) {
         if mainTable.hidden == false {
+        
             searchBox.text = ""
             listTable.reloadData()
             searchBox.animation = "morph"
@@ -243,7 +244,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.addButton.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
             cell.callButton.addTarget(self, action: "callNow:", forControlEvents: UIControlEvents.TouchUpInside)
             
-
+            cell.checkImg.hidden = true 
             cell.addButton.hidden = true
             cell.callButton.hidden = true
             cell.listLabel.textColor = UIColor.blackColor()
