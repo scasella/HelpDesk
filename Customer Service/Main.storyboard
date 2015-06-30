@@ -370,7 +370,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card3.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qdp-Q5-y8a">
-                                <rect key="frame" x="16" y="204" width="343" height="201"/>
+                                <rect key="frame" x="16" y="145" width="343" height="201"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="201" id="1s3-bH-iRG"/>
@@ -383,7 +383,7 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2q-kw-5hq">
-                                <rect key="frame" x="62" y="340" width="90" height="48"/>
+                                <rect key="frame" x="62" y="281" width="90" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="5Ls-Wb-YiW"/>
@@ -419,7 +419,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Hours &amp; other info" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="vTT-n3-elf">
-                                <rect key="frame" x="59" y="299" width="256" height="30"/>
+                                <rect key="frame" x="59" y="240" width="256" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="5t9-x6-mYT"/>
                                     <constraint firstAttribute="height" constant="30" id="M5m-0U-hcY"/>
@@ -437,7 +437,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Phone number (1112223333)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwd-N1-2U8">
-                                <rect key="frame" x="59" y="266" width="256" height="30"/>
+                                <rect key="frame" x="59" y="207" width="256" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="Nyg-fk-fwJ"/>
                                     <constraint firstAttribute="height" constant="30" id="yNw-vN-A3e"/>
@@ -449,7 +449,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" New contact" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2oN-OH-t68">
-                                <rect key="frame" x="59" y="232" width="256" height="30"/>
+                                <rect key="frame" x="59" y="173" width="256" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="Ge6-Cf-9BL"/>
                                     <constraint firstAttribute="height" constant="30" id="bma-Fo-Km2"/>
@@ -461,7 +461,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HelpDial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etY-pL-6F7">
-                                <rect key="frame" x="54" y="216" width="264" height="43"/>
+                                <rect key="frame" x="54" y="157" width="264" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="0lk-IX-PeD"/>
                                     <constraint firstAttribute="width" constant="264" id="30Z-vC-TjH"/>
@@ -471,7 +471,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wU-q4-ws8">
-                                <rect key="frame" x="160" y="340" width="91" height="48"/>
+                                <rect key="frame" x="160" y="281" width="91" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="135-V9-P1L"/>
@@ -510,7 +510,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShM-66-1Zw">
-                                <rect key="frame" x="257" y="333" width="60" height="62"/>
+                                <rect key="frame" x="257" y="274" width="60" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="21Z-Pf-foM"/>
                                     <constraint firstAttribute="height" constant="62" id="5vD-Zh-aBO"/>
@@ -604,7 +604,7 @@
                             <constraint firstItem="ShM-66-1Zw" firstAttribute="leading" secondItem="0wU-q4-ws8" secondAttribute="trailing" constant="9" id="fH0-6D-P8o"/>
                             <constraint firstItem="Qdp-Q5-y8a" firstAttribute="leading" secondItem="xf7-Ly-PjA" secondAttribute="leadingMargin" id="fUc-07-Vx2"/>
                             <constraint firstItem="u2q-kw-5hq" firstAttribute="top" secondItem="vTT-n3-elf" secondAttribute="bottom" constant="15" id="gcK-9P-1Ck"/>
-                            <constraint firstAttribute="centerY" secondItem="Qdp-Q5-y8a" secondAttribute="centerY" constant="29" id="gdB-pF-YVr"/>
+                            <constraint firstAttribute="centerY" secondItem="Qdp-Q5-y8a" secondAttribute="centerY" constant="88" id="gdB-pF-YVr"/>
                             <constraint firstItem="ShM-66-1Zw" firstAttribute="top" secondItem="Qdp-Q5-y8a" secondAttribute="bottom" constant="-72" id="gon-p1-vd5"/>
                             <constraint firstItem="ShM-66-1Zw" firstAttribute="leading" secondItem="vTT-n3-elf" secondAttribute="trailing" constant="-34" id="hhg-rN-CbQ"/>
                             <constraint firstItem="ShM-66-1Zw" firstAttribute="centerX" secondItem="Qdp-Q5-y8a" secondAttribute="centerX" constant="123.5" id="jLY-Mi-mCv"/>
@@ -737,9 +737,6 @@
                                 <exclude reference="skK-Cl-hws"/>
                             </mask>
                         </variation>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="17a-Pt-WNC" appends="YES" id="89W-m5-NVQ"/>
-                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -748,17 +745,11 @@
                         <outlet property="mainText" destination="etY-pL-6F7" id="LAr-Sg-YHJ"/>
                         <outlet property="nameText" destination="2oN-OH-t68" id="Yfj-81-Tt0"/>
                         <outlet property="numberText" destination="bwd-N1-2U8" id="0dQ-4T-vpI"/>
-                        <outlet property="panRecognizer" destination="17a-Pt-WNC" id="qMJ-Vc-vtq"/>
                         <outlet property="springView" destination="xf7-Ly-PjA" id="Qi3-tn-Iba"/>
                         <outlet property="updateButton" destination="0wU-q4-ws8" id="vdS-qS-6Oo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8f-Ea-StF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="17a-Pt-WNC">
-                    <connections>
-                        <action selector="handlePan:" destination="hEE-QS-QcY" id="Jq6-tZ-FPa"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="757.5" y="273.5"/>
         </scene>

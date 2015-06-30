@@ -14,43 +14,31 @@ var nameString = ""
 
 class DetailView: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet var panRecognizer: UIPanGestureRecognizer!
-
-    
     @IBOutlet var mainText: UILabel!
-    
-
     @IBOutlet var nameText: UITextField!
-    
     @IBOutlet var backButton: UIButton!
     @IBOutlet var numberText: UITextField!
-    
     @IBOutlet var springView: SpringView!
-    
     @IBOutlet var updateButton: UIButton!
-    
     @IBOutlet var hoursText: UITextField!
-    
     @IBAction func callClick(sender: AnyObject) {
         
         UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numberText.text)")!)
         performSegueWithIdentifier("mainSegue", sender: self)
         
     }
+    
+    
+    
     @IBAction func saveButton(sender: AnyObject) {
         
         if isNew == false {
         
             nameCust.removeAtIndex(nameSet)
-            
             numberCust.removeAtIndex(nameSet)
-            
             hoursCust.removeAtIndex(nameSet)
-            
             nameCust.insert(nameText.text, atIndex: nameSet)
-            
             numberCust.insert(numberText.text, atIndex: nameSet)
-            
             hoursCust.insert(hoursText.text, atIndex: nameSet)
             
             NSUserDefaults.standardUserDefaults().setObject(nameCust, forKey: "nameCust")
@@ -65,11 +53,8 @@ class DetailView: UIViewController, UITextFieldDelegate {
             } else {
             
             favorites.append(nameText.text)
-            
             nameCust.append(nameText.text)
-            
             numberCust.append(numberText.text)
-            
             hoursCust.append(hoursText.text)
             
             NSUserDefaults.standardUserDefaults().setObject(nameCust, forKey: "nameCust")
@@ -82,6 +67,8 @@ class DetailView: UIViewController, UITextFieldDelegate {
         performSegueWithIdentifier("mainSegue", sender: self)
         
     }
+    
+    
     
     @IBAction func favoriteButton(sender: AnyObject) {
         
@@ -101,6 +88,8 @@ class DetailView: UIViewController, UITextFieldDelegate {
         performSegueWithIdentifier("mainSegue", sender: self)
     
     }
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         
@@ -126,14 +115,20 @@ class DetailView: UIViewController, UITextFieldDelegate {
 
     }
     
+    
+    
     override func viewDidLoad(){
         super.viewDidLoad()
 
     }
     
+    
+    
     func textFieldDidEndEditing(textField: UITextField) {
         mainText.text = nameText.text
     }
+    
+    
 
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         if textField == numberText {
@@ -150,18 +145,12 @@ class DetailView: UIViewController, UITextFieldDelegate {
     }
     
     
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
-        let translation = recognizer.translationInView(self.view)
-        if let view = recognizer.view {
-            view.center = CGPoint(x:view.center.x + translation.x,
-                y:view.center.y + translation.y)
-        }
-        recognizer.setTranslation(CGPointZero, inView: self.view)}
     
         
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -21,10 +21,18 @@ var favorites = [String]()
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UITextFieldDelegate{
     
     @IBOutlet var searchBox: SpringTextField!
- 
     @IBOutlet var titleHeader: UIImageView!
-    
     @IBOutlet var addmore: UILabel!
+    @IBOutlet var searchImg: SpringButton!
+    @IBOutlet var searchView: UIView!
+    @IBOutlet var callNoExpand: SpringImageView!
+    @IBOutlet var addButton: SpringButton!
+    @IBOutlet var mainTable: UITableView!
+    @IBOutlet var listTable: UITableView!
+    var resultSearchController = UISearchController()
+    var filteredNames = [String]()
+    
+    
     
     @IBAction func editChange(sender: AnyObject) {
         
@@ -34,23 +42,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let searchPredicate = NSPredicate(format: "SELF BEGINSWITH [c] %@", searchBox.text)
         let array = (name as NSArray).filteredArrayUsingPredicate(searchPredicate)
         filteredNames = array as! [String]
+        
         if filteredNames.count < 1 {
-            
-         
-            
+ 
         } else {
             
             mainTable.hidden = true
-   
-            
+
         }
-        smallSearch.hidden = false
-        self.listTable!.reloadData()
+        
+            smallSearch.hidden = false
+            self.listTable!.reloadData()
 
         }
   
     
+    
     @IBOutlet var smallSearch: SpringButton!
+    
+    
     
     @IBAction func searchButton(sender: AnyObject) {
         if mainTable.hidden == false {
@@ -61,48 +71,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             searchBox.delay = 0.15
             searchBox.duration = 1.15
             searchBox.animate()
-         searchImg.animation = "flipX"
+            searchImg.animation = "flipX"
             searchImg.setImage(UIImage(named: "heartImg.png"), forState: UIControlState.Normal)
             searchImg.duration = 0.25
             searchImg.animate()
-        mainTable.hidden = true
-            
-        searchView.hidden = false
+            mainTable.hidden = true
+            searchView.hidden = false
             
         } else {
             searchBox.resignFirstResponder()
             searchView.hidden = true
             smallSearch.hidden = true
             mainTable.hidden = false
-            
-             searchImg.animation = "flipX"
+            searchImg.animation = "flipX"
             searchImg.duration = 0.25
             searchImg.animate()
             searchImg.setImage(UIImage(named: "SeachImg.png"), forState: UIControlState.Normal)
-             mainTable.reloadData()
+            mainTable.reloadData()
         
         }
         
     }
     
-    @IBOutlet var searchImg: SpringButton!
-    
-    @IBOutlet var searchView: UIView!
-    
-    @IBOutlet var callNoExpand: SpringImageView!
-    @IBOutlet var addButton: SpringButton!
+
     
     //Fav Results Add Button
     func buttonClicked(sender:UIButton) {
         
         var buttonRow = sender.tag
         var lookup = find(name, filteredNames[buttonRow]) //locate company within directory
+        
         favorites.append(filteredNames[buttonRow])
-        
         nameCust.append(filteredNames[buttonRow])
-        
         numberCust.append(number[lookup!])
-        
         hoursCust.append(hours[lookup!])
         
         NSUserDefaults.standardUserDefaults().setObject(nameCust, forKey: "nameCust")
@@ -114,6 +115,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mainTable.reloadData()
         
     }
+    
+    
     
     @IBAction func callNow(sender: UIButton) {
         var numLookup = sender.tag
@@ -129,10 +132,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
     
-    @IBOutlet var mainTable: UITableView!
-    @IBOutlet var listTable: UITableView!
-    
-    @IBAction func customButton(sender: AnyObject) {
+      @IBAction func customButton(sender: AnyObject) {
        
         isNew = true
         callNoExpand.hidden = true
@@ -142,9 +142,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    var resultSearchController = UISearchController()
-
-    var filteredNames = [String]()
 
     
     //Create directory arrays
@@ -161,6 +158,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var nameUrl = NSURL.fileURLWithPath(namePath!)
         var error: NSError?
         let nameContent = NSString(contentsOfFile: namePath!, encoding:NSUTF8StringEncoding, error: &error)
+       
         if nameContent != nil {
            var nameReformat = nameContent!.componentsSeparatedByString("=")
             for index in nameReformat {
@@ -168,8 +166,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
                 
             
-        }
-        else {
+        } else {
             println("error: \(error)")
         }
         println(name.count)
@@ -183,8 +180,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         
             
-        }
-        else {
+        } else {
             println("error: \(error)")
         }
             println(number.count)
@@ -198,8 +194,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
             
-        }
-        else {
+        } else {
             println("error: \(error)")
         }
         println(hours.count)
@@ -208,6 +203,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
      
         
         }
+    
+    
     
     override func viewDidLoad(){
            super.viewDidLoad()
@@ -219,6 +216,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
 //Table Setup
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchBox.isFirstResponder() == true{
@@ -229,6 +228,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               return favorites.count        }
         }
     
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         var cell : CustomCell! = listTable.dequeueReusableCellWithIdentifier("Cell") as! CustomCell
@@ -238,12 +239,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         if searchBox.isFirstResponder() == true  {
             cell.listLabel.text = filteredNames[indexPath.row] as String
-           
             cell.addButton.tag = indexPath.row
-             cell.callButton.tag = indexPath.row
+            cell.callButton.tag = indexPath.row
             cell.addButton.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
             cell.callButton.addTarget(self, action: "callNow:", forControlEvents: UIControlEvents.TouchUpInside)
-            
             cell.checkImg.hidden = true 
             cell.addButton.hidden = true
             cell.callButton.hidden = true
@@ -252,17 +251,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
             
         } else {
+           
             if tableView == mainTable {
                 
             var cell2 : MainCell! = mainTable.dequeueReusableCellWithIdentifier("Cell2") as! MainCell
-            
             cell2.cellLabel.text = favorites[indexPath.row]
             
            
             if nameCust.count != 0 {
                 
             var bgSet: Int = find(nameCust, cell2.cellLabel.text!)!
-
                 
             }
 
@@ -273,31 +271,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
             return cell
         }}
+    
+    
 
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             
              nameSet = indexPath.row
             
             if tableView == listTable {
+            
             var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
-                if find(nameCust, currentCell.listLabel.text!) == nil{
+            
+            if find(nameCust, currentCell.listLabel.text!) == nil{
                     currentCell.addButton.hidden = false } else {
                     currentCell.checkImg.hidden = false
-                }
-            currentCell.callButton.hidden = false
-                currentCell.listLabel.textColor = UIColor.blackColor() }
+                    }
+                    currentCell.callButton.hidden = false
+                    currentCell.listLabel.textColor = UIColor.blackColor() }
     
-    else {
-    callNoExpand.hidden = true
-    searchImg.hidden = true
-    addButton.hidden = true
-    isNew = false
-    performSegueWithIdentifier("customSegue", sender: self)
+            else {
+                    callNoExpand.hidden = true
+                    searchImg.hidden = true
+                    addButton.hidden = true
+                    isNew = false
+                    performSegueWithIdentifier("customSegue", sender: self)
 
     
     
             }}
-    
     
 
     
@@ -305,12 +306,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if tableView == listTable{
             
             if listTable.cellForRowAtIndexPath(indexPath) != nil {
-            var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
-               currentCell.addButton.hidden = true
-                 currentCell.checkImg.hidden = true
-            currentCell.callButton.hidden = true
+           
+                var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
+                currentCell.addButton.hidden = true
+                currentCell.checkImg.hidden = true
+                currentCell.callButton.hidden = true
                 currentCell.listLabel.textColor = UIColor.blackColor()}}}
-    
 
         
     
@@ -323,11 +324,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else if tableView == mainTable && editingStyle == UITableViewCellEditingStyle.Delete  {
             
             favorites.removeAtIndex(indexPath.row)
-            
             nameCust.removeAtIndex(indexPath.row)
-            
             numberCust.removeAtIndex(indexPath.row)
-            
             hoursCust.removeAtIndex(indexPath.row)
             
             NSUserDefaults.standardUserDefaults().setObject(nameCust, forKey: "nameCust")
@@ -336,25 +334,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
             
             mainTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
             mainTable.reloadData() }
         
     }
+    
+    
+    
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
       
         searchView.hidden = true
         smallSearch.hidden = true
-        
-        
         searchImg.animation = "flipX"
         searchImg.duration = 0.25
         searchImg.animate()
         searchImg.setImage(UIImage(named: "SeachImg.png"), forState: UIControlState.Normal)
-      
-
+    
         return true
 
     }
+    
+    
+    
     func textFieldDidEndEditing(textField: UITextField) {
           mainTable.hidden = false
         mainTable.reloadData()
