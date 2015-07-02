@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,21 +17,21 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helpDial.png" translatesAutoresizingMaskIntoConstraints="NO" id="tc1-SO-wZD">
-                    <rect key="frame" x="67" y="135" width="240" height="72"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="tc1-SO-wZD">
+                    <rect key="frame" x="8" y="161" width="359" height="47"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="72" id="C7o-KX-vZA"/>
-                        <constraint firstAttribute="width" constant="240" id="Udh-er-vwI"/>
+                        <constraint firstAttribute="height" constant="47" id="e23-5i-nMm"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="EhL-nG-BZg"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="21" id="KYN-ci-UkJ"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Kjt-U8-B8u"/>
-                <constraint firstAttribute="centerX" secondItem="tc1-SO-wZD" secondAttribute="centerX" constant="0.5" id="a68-rT-Cxd"/>
-                <constraint firstAttribute="centerY" secondItem="tc1-SO-wZD" secondAttribute="centerY" constant="162.5" id="kY4-nc-gpP"/>
+                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="21" id="Jef-bv-zg1"/>
+                <constraint firstItem="tc1-SO-wZD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="NEA-OJ-fRW"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="tc1-SO-wZD" secondAttribute="centerX" id="aTS-w0-6Jp"/>
+                <constraint firstItem="tc1-SO-wZD" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="d07-IM-ssU"/>
+                <constraint firstItem="tc1-SO-wZD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="161" id="kQZ-tn-fQy"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="xHp-WT-lou"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -38,6 +39,6 @@
         </view>
     </objects>
     <resources>
-        <image name="helpDial.png" width="1425" height="357"/>
+        <image name="openScreen.png" width="2517" height="258"/>
     </resources>
 </document>

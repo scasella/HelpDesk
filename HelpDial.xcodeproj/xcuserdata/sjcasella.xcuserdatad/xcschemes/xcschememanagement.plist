@@ -23,6 +23,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Hotline Yellow Pages.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>

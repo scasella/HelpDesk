@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -18,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="helpDial.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Q2-Jn-pwt">
-                                <rect key="frame" x="113" y="33" width="154" height="44"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newLogo2.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Q2-Jn-pwt">
+                                <rect key="frame" x="117" y="37" width="160" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="148" id="BA3-pI-CKs"/>
-                                    <constraint firstAttribute="width" constant="154" id="FGE-OB-V9v"/>
-                                    <constraint firstAttribute="height" constant="44" id="I5i-cE-XD9"/>
+                                    <constraint firstAttribute="width" constant="160" id="FGE-OB-V9v"/>
+                                    <constraint firstAttribute="height" constant="38" id="I5i-cE-XD9"/>
                                     <constraint firstAttribute="height" constant="30" id="aTA-5L-tdY"/>
                                 </constraints>
                                 <variation key="default">
@@ -100,8 +100,8 @@
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fap-o4-DIw" userLabel="View2">
                                 <rect key="frame" x="10" y="80" width="355" height="415"/>
                                 <subviews>
-                                    <textField clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZm-Qa-xHd" customClass="SpringTextField" customModule="HelpDial" customModuleProvider="target">
-                                        <rect key="frame" x="124" y="0.0" width="97" height="33"/>
+                                    <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZm-Qa-xHd" customClass="SpringTextField" customModule="HelpDial" customModuleProvider="target">
+                                        <rect key="frame" x="125" y="0.0" width="97" height="33"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -204,7 +204,7 @@
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="SZm-Qa-xHd" secondAttribute="centerX" constant="6" id="Gy1-nb-9hR"/>
                                     <constraint firstItem="mZ3-mY-ICy" firstAttribute="leading" secondItem="Fap-o4-DIw" secondAttribute="leading" id="IxA-bS-qPr"/>
-                                    <constraint firstAttribute="centerX" secondItem="SZm-Qa-xHd" secondAttribute="centerX" constant="6" id="LOD-Ky-bza"/>
+                                    <constraint firstAttribute="centerX" secondItem="SZm-Qa-xHd" secondAttribute="centerX" constant="4" id="LOD-Ky-bza"/>
                                     <constraint firstItem="mZ3-mY-ICy" firstAttribute="top" secondItem="Fap-o4-DIw" secondAttribute="top" constant="44" id="Skz-fz-eFr"/>
                                     <constraint firstAttribute="bottom" secondItem="mZ3-mY-ICy" secondAttribute="bottom" id="f3x-8A-IcN"/>
                                     <constraint firstItem="SZm-Qa-xHd" firstAttribute="top" secondItem="Fap-o4-DIw" secondAttribute="top" id="kgE-Ec-FJD"/>
@@ -298,7 +298,7 @@
                             <constraint firstItem="3HZ-BB-Fts" firstAttribute="bottom" secondItem="kh9-bI-dsS" secondAttribute="bottomMargin" id="3gr-LW-PKw"/>
                             <constraint firstItem="G2M-Ge-N4e" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="85" id="6nt-Yz-6bu"/>
                             <constraint firstItem="Fap-o4-DIw" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="80" id="8LE-V2-BRg"/>
-                            <constraint firstItem="6Q2-Jn-pwt" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="33" id="8ji-NW-lka"/>
+                            <constraint firstItem="6Q2-Jn-pwt" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="37" id="8ji-NW-lka"/>
                             <constraint firstItem="G2M-Ge-N4e" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="BM2-AS-9XS"/>
                             <constraint firstItem="Fap-o4-DIw" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" constant="16" id="EVY-ur-pYX"/>
                             <constraint firstItem="Fap-o4-DIw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="GGe-JD-hSd"/>
@@ -307,7 +307,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="BBa-BR-n8J" secondAttribute="bottom" constant="8" id="JVM-JF-kbY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3HZ-BB-Fts" secondAttribute="trailing" constant="16" id="Jae-WO-SZy"/>
                             <constraint firstAttribute="bottomMargin" secondItem="iRh-DL-wA8" secondAttribute="bottom" constant="77" id="Ld7-hm-pph"/>
-                            <constraint firstItem="6Q2-Jn-pwt" firstAttribute="centerY" secondItem="Fgd-gz-3EL" secondAttribute="centerY" id="N9X-us-AeL"/>
+                            <constraint firstItem="6Q2-Jn-pwt" firstAttribute="centerY" secondItem="Fgd-gz-3EL" secondAttribute="centerY" constant="0.5" id="N9X-us-AeL"/>
                             <constraint firstItem="Fgd-gz-3EL" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="OwX-fE-Vui"/>
                             <constraint firstItem="iRh-DL-wA8" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="RVm-3k-Acd"/>
                             <constraint firstItem="3HZ-BB-Fts" firstAttribute="leading" secondItem="BBa-BR-n8J" secondAttribute="trailing" constant="8" id="RcW-pP-t9m"/>
@@ -319,7 +319,7 @@
                             <constraint firstItem="iRh-DL-wA8" firstAttribute="top" secondItem="mZ3-mY-ICy" secondAttribute="bottom" constant="8" id="j1s-vK-h63"/>
                             <constraint firstItem="Fgd-gz-3EL" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="33" id="j9r-ke-ts3"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Fap-o4-DIw" secondAttribute="bottom" constant="172" id="kj7-r4-XeI"/>
-                            <constraint firstAttribute="centerX" secondItem="6Q2-Jn-pwt" secondAttribute="centerX" constant="-1.5" id="qNC-7q-S89"/>
+                            <constraint firstAttribute="centerX" secondItem="6Q2-Jn-pwt" secondAttribute="centerX" constant="-9.5" id="qNC-7q-S89"/>
                             <constraint firstItem="G2M-Ge-N4e" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="toA-fE-mlT"/>
                             <constraint firstItem="3HZ-BB-Fts" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="279" id="vqI-km-jj0"/>
                         </constraints>
@@ -449,7 +449,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" New contact" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2oN-OH-t68">
-                                <rect key="frame" x="59" y="173" width="256" height="30"/>
+                                <rect key="frame" x="59" y="174" width="256" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="Ge6-Cf-9BL"/>
                                     <constraint firstAttribute="height" constant="30" id="bma-Fo-Km2"/>
@@ -584,7 +584,7 @@
                             <constraint firstItem="Qdp-Q5-y8a" firstAttribute="top" secondItem="Vgs-uw-UDW" secondAttribute="bottom" constant="184" id="X1B-bt-ZoH"/>
                             <constraint firstItem="Qdp-Q5-y8a" firstAttribute="trailing" secondItem="xf7-Ly-PjA" secondAttribute="trailingMargin" id="XWm-Pc-PWH"/>
                             <constraint firstItem="0wU-q4-ws8" firstAttribute="leading" secondItem="u2q-kw-5hq" secondAttribute="trailing" constant="12" id="Xdm-08-iSO"/>
-                            <constraint firstItem="2oN-OH-t68" firstAttribute="centerY" secondItem="Qdp-Q5-y8a" secondAttribute="centerY" constant="-57.5" id="Xx5-hc-Ywr"/>
+                            <constraint firstItem="2oN-OH-t68" firstAttribute="centerY" secondItem="Qdp-Q5-y8a" secondAttribute="centerY" constant="-56.5" id="Xx5-hc-Ywr"/>
                             <constraint firstItem="0wU-q4-ws8" firstAttribute="top" secondItem="Qdp-Q5-y8a" secondAttribute="bottom" constant="-65" id="Y0b-9D-AwM"/>
                             <constraint firstItem="ShM-66-1Zw" firstAttribute="leading" secondItem="Qdp-Q5-y8a" secondAttribute="trailing" constant="-78" id="ZLv-oD-SnP"/>
                             <constraint firstItem="ShM-66-1Zw" firstAttribute="top" secondItem="Qdp-Q5-y8a" secondAttribute="bottom" constant="-72" id="aFd-Zl-JjH"/>
@@ -765,7 +765,7 @@
         <image name="checkCell2.png" width="174" height="141"/>
         <image name="heartCell2.png" width="144" height="129"/>
         <image name="heartImg3.png" width="180" height="168"/>
-        <image name="helpDial.png" width="1425" height="357"/>
+        <image name="newLogo2.png" width="1272" height="255"/>
         <image name="saveImg.png" width="270" height="120"/>
     </resources>
 </document>
