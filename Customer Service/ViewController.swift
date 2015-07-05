@@ -25,7 +25,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var addmore: UILabel!
     @IBOutlet var searchImg: SpringButton!
     @IBOutlet var searchView: UIView!
-    @IBOutlet var callNoExpand: SpringImageView!
     @IBOutlet var addButton: SpringButton!
     @IBOutlet var mainTable: UITableView!
     @IBOutlet var listTable: UITableView!
@@ -71,10 +70,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             searchBox.delay = 0.15
             searchBox.duration = 1.15
             searchBox.animate()
-            searchImg.animation = "flipX"
+            //searchImg.animation = "flipX"
             searchImg.setImage(UIImage(named: "heartImg.png"), forState: UIControlState.Normal)
-            searchImg.duration = 0.25
-            searchImg.animate()
+            //searchImg.duration = 0.25
+            //searchImg.animate()
             mainTable.hidden = true
             searchView.hidden = false
             
@@ -83,10 +82,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             searchView.hidden = true
             smallSearch.hidden = true
             mainTable.hidden = false
-            searchImg.animation = "flipX"
-            searchImg.duration = 0.25
-            searchImg.animate()
-            searchImg.setImage(UIImage(named: "SeachImg.png"), forState: UIControlState.Normal)
+            //searchImg.animation = "flipX"
+            //searchImg.duration = 0.25
+            //searchImg.animate()
+            searchImg.setImage(UIImage(named: "newGreenB.png"), forState: UIControlState.Normal)
             mainTable.reloadData()
         
         }
@@ -135,7 +134,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       @IBAction func customButton(sender: AnyObject) {
        
         isNew = true
-        callNoExpand.hidden = true
         searchImg.hidden = true
         addButton.hidden = true 
         performSegueWithIdentifier("customSegue", sender: self)
@@ -290,7 +288,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     currentCell.listLabel.textColor = UIColor.blackColor() }
     
             else {
-                    callNoExpand.hidden = true
+            
                     searchImg.hidden = true
                     addButton.hidden = true
                     isNew = false
@@ -344,13 +342,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       
         searchView.hidden = true
         smallSearch.hidden = true
-        searchImg.animation = "flipX"
-        searchImg.duration = 0.25
-        searchImg.animate()
-        searchImg.setImage(UIImage(named: "SeachImg.png"), forState: UIControlState.Normal)
+       // searchImg.animation = "flipX"
+        //searchImg.duration = 0.25
+        //searchImg.animate()
+        searchImg.setImage(UIImage(named: "newGreenB.png"), forState: UIControlState.Normal)
     
         return true
 
+    }
+    
+    
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     

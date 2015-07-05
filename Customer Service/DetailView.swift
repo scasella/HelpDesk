@@ -161,5 +161,11 @@ class DetailView: UIViewController, UITextFieldDelegate {
         springView.animate()
         
     }
+    
+    
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
   
 }
