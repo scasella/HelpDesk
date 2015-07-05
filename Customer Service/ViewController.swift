@@ -68,10 +68,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             listTable.reloadData()
             searchBox.animation = "morph"
             searchBox.delay = 0.15
-            searchBox.duration = 1.15
+            searchBox.force = 1.2
+            searchBox.duration = 1.25
             searchBox.animate()
             //searchImg.animation = "flipX"
-            searchImg.setImage(UIImage(named: "heartImg.png"), forState: UIControlState.Normal)
+            searchImg.setImage(UIImage(named: "heartBig.png"), forState: UIControlState.Normal)
             //searchImg.duration = 0.25
             //searchImg.animate()
             mainTable.hidden = true
@@ -167,7 +168,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else {
             println("error: \(error)")
         }
-        println(name.count)
+     
         var numbersPath = NSBundle.mainBundle().pathForResource("numbers", ofType: "txt")
         var numbersUrl = NSURL.fileURLWithPath(numbersPath!)
         let numbersContent = NSString(contentsOfFile: numbersPath!, encoding:NSUTF8StringEncoding, error: &error)
@@ -181,7 +182,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else {
             println("error: \(error)")
         }
-            println(number.count)
+        
         var hoursPath = NSBundle.mainBundle().pathForResource("hours", ofType: "txt")
         var hoursUrl = NSURL.fileURLWithPath(hoursPath!)
         let hoursContent = NSString(contentsOfFile: hoursPath!, encoding:NSUTF8StringEncoding, error: &error)
@@ -194,13 +195,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         } else {
             println("error: \(error)")
-        }
-        println(hours.count)
-
-       ()
-     
-        
-        }
+        } }
     
     
     

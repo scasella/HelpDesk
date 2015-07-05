@@ -14,23 +14,23 @@
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Stephen Casella. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
                     <rect key="frame" x="6" y="625" width="362" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.9137254901960784" green="0.88235294117647056" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="tc1-SO-wZD">
-                    <rect key="frame" x="8" y="161" width="359" height="47"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hypTitle.png" translatesAutoresizingMaskIntoConstraints="NO" id="tc1-SO-wZD">
+                    <rect key="frame" x="61" y="192" width="253" height="64"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="47" id="e23-5i-nMm"/>
+                        <constraint firstAttribute="height" constant="64" id="e23-5i-nMm"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.20784313725490194" green="0.26666666666666666" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="21" id="Jef-bv-zg1"/>
-                <constraint firstItem="tc1-SO-wZD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="NEA-OJ-fRW"/>
+                <constraint firstItem="tc1-SO-wZD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" constant="53" id="NEA-OJ-fRW"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="tc1-SO-wZD" secondAttribute="centerX" id="aTS-w0-6Jp"/>
-                <constraint firstItem="tc1-SO-wZD" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="d07-IM-ssU"/>
-                <constraint firstItem="tc1-SO-wZD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="161" id="kQZ-tn-fQy"/>
+                <constraint firstItem="tc1-SO-wZD" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" constant="-53" id="d07-IM-ssU"/>
+                <constraint firstItem="tc1-SO-wZD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="192" id="kQZ-tn-fQy"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="xHp-WT-lou"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -39,6 +39,6 @@
         </view>
     </objects>
     <resources>
-        <image name="openScreen.png" width="2517" height="258"/>
+        <image name="hypTitle.png" width="543" height="135"/>
     </resources>
 </document>
