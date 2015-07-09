@@ -23,6 +23,8 @@
 		8846C0EB1B48A9F9004A3A13 /* hypTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8846C0E61B48A9F9004A3A13 /* hypTitle.png */; };
 		8846C0EC1B48A9F9004A3A13 /* bottomBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 8846C0E71B48A9F9004A3A13 /* bottomBG.png */; };
 		885CB92B1B27C2F500D91BBE /* callCell2.png in Resources */ = {isa = PBXBuildFile; fileRef = 885CB9271B27C2F500D91BBE /* callCell2.png */; };
+		886CFCC71B4976D2007E0E49 /* homeGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 886CFCC51B4976D2007E0E49 /* homeGreen.png */; };
+		886CFCC81B4976D2007E0E49 /* homeRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 886CFCC61B4976D2007E0E49 /* homeRed.png */; };
 		88705EFD1AD9596C009E0F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88705EFC1AD9596C009E0F3C /* AppDelegate.swift */; };
 		88705EFF1AD9596C009E0F3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88705EFE1AD9596C009E0F3C /* ViewController.swift */; };
 		88705F041AD9596C009E0F3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88705F031AD9596C009E0F3C /* Images.xcassets */; };
@@ -93,6 +95,8 @@
 		8846C0E61B48A9F9004A3A13 /* hypTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hypTitle.png; sourceTree = "<group>"; };
 		8846C0E71B48A9F9004A3A13 /* bottomBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomBG.png; sourceTree = "<group>"; };
 		885CB9271B27C2F500D91BBE /* callCell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = callCell2.png; sourceTree = "<group>"; };
+		886CFCC51B4976D2007E0E49 /* homeGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeGreen.png; sourceTree = "<group>"; };
+		886CFCC61B4976D2007E0E49 /* homeRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeRed.png; sourceTree = "<group>"; };
 		88705EF71AD9596C009E0F3C /* HelpDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88705EFB1AD9596C009E0F3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88705EFC1AD9596C009E0F3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 			children = (
 				88D7217A1B1E8263008B1CF2 /* New Group */,
 				88A0836C1B2E2B29009A37E4 /* numbers.txt */,
+				886CFCC51B4976D2007E0E49 /* homeGreen.png */,
+				886CFCC61B4976D2007E0E49 /* homeRed.png */,
 				8846C0E31B48A9F9004A3A13 /* newGreenB.png */,
 				8846C0E41B48A9F9004A3A13 /* topBG.png */,
 				8846C0E51B48A9F9004A3A13 /* newRedB.png */,
@@ -357,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				886CFCC81B4976D2007E0E49 /* homeRed.png in Resources */,
 				881485C91B495EA200CECEB5 /* callIconN.png in Resources */,
 				8846C0E81B48A9F9004A3A13 /* newGreenB.png in Resources */,
 				881485C81B495EA200CECEB5 /* checkIconN.png in Resources */,
@@ -364,6 +371,7 @@
 				881485CB1B49691F00CECEB5 /* cardBGN4.png in Resources */,
 				88D721791B1E8200008B1CF2 /* Main.storyboard in Resources */,
 				881485BF1B495CBE00CECEB5 /* backB.png in Resources */,
+				886CFCC71B4976D2007E0E49 /* homeGreen.png in Resources */,
 				884547381B23982100A1DA33 /* callImg.png in Resources */,
 				88705F071AD9596C009E0F3C /* LaunchScreen.xib in Resources */,
 				8846C0EA1B48A9F9004A3A13 /* newRedB.png in Resources */,

@@ -11,22 +11,10 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Customer Service.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>HelpDial 2.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
 		<key>HelpDial.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>Hotline Yellow Pages.xcscheme</key>
 		<dict>

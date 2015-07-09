@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             searchBox.duration = 1.25
             searchBox.animate()
             //searchImg.animation = "flipX"
-            searchImg.setImage(UIImage(named: "heartBig.png"), forState: UIControlState.Normal)
+            searchImg.setImage(UIImage(named: "homeGreen.png"), forState: UIControlState.Normal)
             //searchImg.duration = 0.25
             //searchImg.animate()
             mainTable.hidden = true
