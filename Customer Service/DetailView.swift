@@ -21,13 +21,17 @@ class DetailView: UIViewController, UITextFieldDelegate {
     @IBOutlet var springView: SpringView!
     @IBOutlet var updateButton: UIButton!
     @IBOutlet var hoursText: UITextField!
-    @IBAction func callClick(sender: AnyObject) {
-        
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numberText.text)")!)
-        performSegueWithIdentifier("mainSegue", sender: self)
-        
-    }
     
+    
+    
+    @IBAction func callClick(sender: AnyObject) {
+        if numberText.text.length == 10 {
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numberText.text)")!)
+        if askForReview == false {
+            performSegueWithIdentifier("mainSegue", sender: self) } else {
+            performSegueWithIdentifier("toReviewPageDetail", sender: self) }
+        }}
+
     
     
     @IBAction func saveButton(sender: AnyObject) {
@@ -70,27 +74,6 @@ class DetailView: UIViewController, UITextFieldDelegate {
     
     
     
-    @IBAction func favoriteButton(sender: AnyObject) {
-        
-        favorites.append(nameString)
-        
-        nameCust.append(nameText.text)
-        
-        numberCust.append(numberText.text)
-        
-        hoursCust.append(hoursText.text)
-        
-        NSUserDefaults.standardUserDefaults().setObject(nameCust, forKey: "nameCust")
-        NSUserDefaults.standardUserDefaults().setObject(numberCust, forKey: "numberCust")
-        NSUserDefaults.standardUserDefaults().setObject(hoursCust, forKey: "hoursCust")
-        NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
-    
-        performSegueWithIdentifier("mainSegue", sender: self)
-    
-    }
-    
-    
-    
     override func viewWillAppear(animated: Bool) {
         
         if isNew == false {
@@ -99,11 +82,8 @@ class DetailView: UIViewController, UITextFieldDelegate {
             nameText.hidden = true
             
             mainText.text = favorites[nameSet]
-            
             nameText.text = favorites[nameSet]
-            
             numberText.text = numberCust[nameSet]
-            
             hoursText.text = hoursCust[nameSet]
             
         } else if isNew == true {
@@ -124,9 +104,16 @@ class DetailView: UIViewController, UITextFieldDelegate {
     
     
     
+    override func viewDidDisappear(animated: Bool) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
     func textFieldDidEndEditing(textField: UITextField) {
         mainText.text = nameText.text
     }
+
     
     
 
@@ -154,10 +141,11 @@ class DetailView: UIViewController, UITextFieldDelegate {
     
         
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "mainSegue" {
        springView.animation = "fall"
         springView.duration = 1.5
         springView.animate()
-        
+        }
     }
     
     

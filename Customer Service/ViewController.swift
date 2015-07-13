@@ -10,8 +10,6 @@ import UIKit
 
 var askForReview = true
 
-var callingNow = false
-
 var nameSet: Int = 0
 
 var filteredCount = 0
@@ -75,10 +73,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             searchBox.force = 1.2
             searchBox.duration = 1.25
             searchBox.animate()
-            //searchImg.animation = "flipX"
             searchImg.setImage(UIImage(named: "homeGreen.png"), forState: UIControlState.Normal)
-            //searchImg.duration = 0.25
-            //searchImg.animate()
             mainTable.hidden = true
             searchView.hidden = false
             
@@ -87,9 +82,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             searchView.hidden = true
             smallSearch.hidden = true
             mainTable.hidden = false
-            //searchImg.animation = "flipX"
-            //searchImg.duration = 0.25
-            //searchImg.animate()
             searchImg.setImage(UIImage(named: "newGreenB.png"), forState: UIControlState.Normal)
             mainTable.reloadData()
         
@@ -97,9 +89,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    
+    
     override func viewDidAppear(animated: Bool) {
         println("TEST")
     }
+    
+    
     
     //Fav Results Add Button
     func buttonClicked(sender:UIButton) {
@@ -117,6 +113,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         NSUserDefaults.standardUserDefaults().setObject(hoursCust, forKey: "hoursCust")
         NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
         
+        searchBox.text = ""
         listTable.reloadData()
         mainTable.reloadData()
         
@@ -125,12 +122,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBAction func callNow(sender: UIButton) {
-        callingNow = true
-        NSUserDefaults.standardUserDefaults().setObject(callingNow, forKey: "callingNow")
         var numLookup = sender.tag
         var rightNum = find(name, filteredNames[numLookup])
          UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(number[rightNum!])")!)
-         performSegueWithIdentifier("toReviewPage", sender: self)
+        if number[rightNum!] != "" {
+        if askForReview == true {
+        performSegueWithIdentifier("toReviewPage", sender: self) }}
     }
    
 
@@ -204,6 +201,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad(){
            super.viewDidLoad()
+        if NSUserDefaults.standardUserDefaults().objectForKey("askForReview") != nil {
+            askForReview = NSUserDefaults.standardUserDefaults().objectForKey("askForReview") as! Bool
+        }
      }
 
         override func didReceiveMemoryWarning() {
@@ -274,9 +274,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
              nameSet = indexPath.row
             
             if tableView == listTable {
-            
             var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
-            
             if find(nameCust, currentCell.listLabel.text!) == nil{
                     currentCell.addButton.hidden = false } else {
                     currentCell.checkImg.hidden = false
@@ -290,9 +288,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     addButton.hidden = true
                     isNew = false
                     performSegueWithIdentifier("customSegue", sender: self)
-
-    
-    
             }}
     
 

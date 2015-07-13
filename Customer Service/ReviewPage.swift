@@ -10,4 +10,23 @@ import UIKit
 
 class ReviewPage: UIViewController {
     
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier! {
+        case "noThanks": askForReview = false
+        NSUserDefaults.standardUserDefaults().setObject(askForReview, forKey: "askForReview")
+        case "Later": println("Do Nothing")
+        case "Sure": if let checkURL = NSURL(string: "https://itunes.apple.com/us/app/hotline-yellow-pages-customer/id1006278912?ls=1&mt=8") {
+            if UIApplication.sharedApplication().openURL(checkURL) {
+            }}
+        default: println("Do Nothing")
+        }}
+
+
+
+override func viewDidDisappear(animated: Bool) {
+    self.dismissViewControllerAnimated(true, completion: nil)
+}
+
 }
