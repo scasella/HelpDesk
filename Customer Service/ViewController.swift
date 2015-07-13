@@ -8,6 +8,10 @@
 
 import UIKit
 
+var askForReview = true
+
+var callingNow = false
+
 var nameSet: Int = 0
 
 var filteredCount = 0
@@ -19,7 +23,7 @@ var customNum = 0
 var favorites = [String]()
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UITextFieldDelegate{
-    
+
     @IBOutlet var searchBox: SpringTextField!
     @IBOutlet var titleHeader: UIImageView!
     @IBOutlet var addmore: UILabel!
@@ -93,7 +97,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-
+    override func viewDidAppear(animated: Bool) {
+        println("TEST")
+    }
     
     //Fav Results Add Button
     func buttonClicked(sender:UIButton) {
@@ -119,17 +125,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBAction func callNow(sender: UIButton) {
+        callingNow = true
+        NSUserDefaults.standardUserDefaults().setObject(callingNow, forKey: "callingNow")
         var numLookup = sender.tag
         var rightNum = find(name, filteredNames[numLookup])
          UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(number[rightNum!])")!)
+         performSegueWithIdentifier("toReviewPage", sender: self)
     }
    
-
-        
-       /* var numLookup = numberCust[sender.tag]
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numLookup))")!)
-        mainTable.reloadData()*/
-
 
     
       @IBAction func customButton(sender: AnyObject) {
@@ -195,15 +198,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         } else {
             println("error: \(error)")
-        } }
-    
-    
-    
+        }
+    }
+
+
     override func viewDidLoad(){
            super.viewDidLoad()
+     }
 
-    }
-    
         override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

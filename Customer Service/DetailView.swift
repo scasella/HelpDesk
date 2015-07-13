@@ -156,8 +156,6 @@ class DetailView: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
        springView.animation = "fall"
         springView.duration = 1.5
-        springView.y = 300
-        springView.x = 300
         springView.animate()
         
     }

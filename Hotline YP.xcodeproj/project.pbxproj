@@ -22,6 +22,7 @@
 		8846C0EA1B48A9F9004A3A13 /* newRedB.png in Resources */ = {isa = PBXBuildFile; fileRef = 8846C0E51B48A9F9004A3A13 /* newRedB.png */; };
 		8846C0EB1B48A9F9004A3A13 /* hypTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8846C0E61B48A9F9004A3A13 /* hypTitle.png */; };
 		8846C0EC1B48A9F9004A3A13 /* bottomBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 8846C0E71B48A9F9004A3A13 /* bottomBG.png */; };
+		884706A01B53294F001C5565 /* ReviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8847069F1B53294F001C5565 /* ReviewPage.swift */; };
 		885CB92B1B27C2F500D91BBE /* callCell2.png in Resources */ = {isa = PBXBuildFile; fileRef = 885CB9271B27C2F500D91BBE /* callCell2.png */; };
 		886CFCC71B4976D2007E0E49 /* homeGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 886CFCC51B4976D2007E0E49 /* homeGreen.png */; };
 		886CFCC81B4976D2007E0E49 /* homeRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 886CFCC61B4976D2007E0E49 /* homeRed.png */; };
@@ -78,6 +79,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		884846F51B52F4AE00FA07D2 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		881485B61B495CBE00CECEB5 /* heartBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartBig.png; sourceTree = "<group>"; };
 		881485B71B495CBE00CECEB5 /* heartSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartSmall.png; sourceTree = "<group>"; };
@@ -94,16 +108,17 @@
 		8846C0E51B48A9F9004A3A13 /* newRedB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newRedB.png; sourceTree = "<group>"; };
 		8846C0E61B48A9F9004A3A13 /* hypTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hypTitle.png; sourceTree = "<group>"; };
 		8846C0E71B48A9F9004A3A13 /* bottomBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomBG.png; sourceTree = "<group>"; };
+		8847069F1B53294F001C5565 /* ReviewPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPage.swift; sourceTree = "<group>"; };
 		885CB9271B27C2F500D91BBE /* callCell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = callCell2.png; sourceTree = "<group>"; };
 		886CFCC51B4976D2007E0E49 /* homeGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeGreen.png; sourceTree = "<group>"; };
 		886CFCC61B4976D2007E0E49 /* homeRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeRed.png; sourceTree = "<group>"; };
-		88705EF71AD9596C009E0F3C /* HelpDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88705EF71AD9596C009E0F3C /* Hotline YP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hotline YP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88705EFB1AD9596C009E0F3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88705EFC1AD9596C009E0F3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88705EFE1AD9596C009E0F3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		88705F031AD9596C009E0F3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		88705F061AD9596C009E0F3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		88705F0C1AD9596C009E0F3C /* HelpDialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpDialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88705F0C1AD9596C009E0F3C /* Hotline YPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hotline YPTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88705F111AD9596C009E0F3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88705F121AD9596C009E0F3C /* Customer_ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer_ServiceTests.swift; sourceTree = "<group>"; };
 		887519411B2CAD29003184CB /* callLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = callLogo.png; sourceTree = "<group>"; };
@@ -175,8 +190,8 @@
 		88705EF81AD9596C009E0F3C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				88705EF71AD9596C009E0F3C /* HelpDial.app */,
-				88705F0C1AD9596C009E0F3C /* HelpDialTests.xctest */,
+				88705EF71AD9596C009E0F3C /* Hotline YP.app */,
+				88705F0C1AD9596C009E0F3C /* Hotline YPTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,6 +222,7 @@
 				884547341B23982100A1DA33 /* callImg.png */,
 				885CB9271B27C2F500D91BBE /* callCell2.png */,
 				88D721781B1E8200008B1CF2 /* Main.storyboard */,
+				8847069F1B53294F001C5565 /* ReviewPage.swift */,
 				88705EFC1AD9596C009E0F3C /* AppDelegate.swift */,
 				88705EFE1AD9596C009E0F3C /* ViewController.swift */,
 				88F69FF01B08FC40001C4BBB /* CustomCell.swift */,
@@ -284,26 +300,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		88705EF61AD9596C009E0F3C /* HelpDial */ = {
+		88705EF61AD9596C009E0F3C /* Hotline YP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88705F161AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "HelpDial" */;
+			buildConfigurationList = 88705F161AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "Hotline YP" */;
 			buildPhases = (
 				88705EF31AD9596C009E0F3C /* Sources */,
 				88705EF41AD9596C009E0F3C /* Frameworks */,
 				88705EF51AD9596C009E0F3C /* Resources */,
+				884846F51B52F4AE00FA07D2 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = HelpDial;
+			name = "Hotline YP";
 			productName = "Customer Service";
-			productReference = 88705EF71AD9596C009E0F3C /* HelpDial.app */;
+			productReference = 88705EF71AD9596C009E0F3C /* Hotline YP.app */;
 			productType = "com.apple.product-type.application";
 		};
-		88705F0B1AD9596C009E0F3C /* HelpDialTests */ = {
+		88705F0B1AD9596C009E0F3C /* Hotline YPTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88705F191AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "HelpDialTests" */;
+			buildConfigurationList = 88705F191AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "Hotline YPTests" */;
 			buildPhases = (
 				88705F081AD9596C009E0F3C /* Sources */,
 				88705F091AD9596C009E0F3C /* Frameworks */,
@@ -314,9 +331,9 @@
 			dependencies = (
 				88705F0E1AD9596C009E0F3C /* PBXTargetDependency */,
 			);
-			name = HelpDialTests;
+			name = "Hotline YPTests";
 			productName = "Customer ServiceTests";
-			productReference = 88705F0C1AD9596C009E0F3C /* HelpDialTests.xctest */;
+			productReference = 88705F0C1AD9596C009E0F3C /* Hotline YPTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -339,7 +356,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 88705EF21AD9596C009E0F3C /* Build configuration list for PBXProject "HelpDial" */;
+			buildConfigurationList = 88705EF21AD9596C009E0F3C /* Build configuration list for PBXProject "Hotline YP" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -352,8 +369,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88705EF61AD9596C009E0F3C /* HelpDial */,
-				88705F0B1AD9596C009E0F3C /* HelpDialTests */,
+				88705EF61AD9596C009E0F3C /* Hotline YP */,
+				88705F0B1AD9596C009E0F3C /* Hotline YPTests */,
 			);
 		};
 /* End PBXProject section */
@@ -421,6 +438,7 @@
 				88705EFD1AD9596C009E0F3C /* AppDelegate.swift in Sources */,
 				88D721A31B1E826C008B1CF2 /* DesignableView.swift in Sources */,
 				88D721B41B1E826C008B1CF2 /* TransitionZoom.swift in Sources */,
+				884706A01B53294F001C5565 /* ReviewPage.swift in Sources */,
 				88D7219C1B1E826C008B1CF2 /* BlurView.swift in Sources */,
 				88F22B7F1AD96CF900282A80 /* Directory.swift in Sources */,
 				88D721A41B1E826C008B1CF2 /* ImageLoader.swift in Sources */,
@@ -454,7 +472,7 @@
 /* Begin PBXTargetDependency section */
 		88705F0E1AD9596C009E0F3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 88705EF61AD9596C009E0F3C /* HelpDial */;
+			target = 88705EF61AD9596C009E0F3C /* Hotline YP */;
 			targetProxy = 88705F0D1AD9596C009E0F3C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -505,7 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -543,7 +561,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -558,11 +576,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hotline_YP-aoiiwlgzytkwqofitfesbhoyxuhl/Build/Products/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "Customer Service/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = HelpDial;
+				PRODUCT_NAME = "Hotline YP";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -574,11 +596,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hotline_YP-aoiiwlgzytkwqofitfesbhoyxuhl/Build/Products/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "Customer Service/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = HelpDial;
+				PRODUCT_NAME = "Hotline YP";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -598,7 +624,7 @@
 				);
 				INFOPLIST_FILE = "Customer ServiceTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = HelpDialTests;
+				PRODUCT_NAME = "Hotline YPTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Customer Service.app/Customer Service";
 			};
 			name = Debug;
@@ -613,7 +639,7 @@
 				);
 				INFOPLIST_FILE = "Customer ServiceTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = HelpDialTests;
+				PRODUCT_NAME = "Hotline YPTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Customer Service.app/Customer Service";
 			};
 			name = Release;
@@ -621,7 +647,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		88705EF21AD9596C009E0F3C /* Build configuration list for PBXProject "HelpDial" */ = {
+		88705EF21AD9596C009E0F3C /* Build configuration list for PBXProject "Hotline YP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88705F141AD9596C009E0F3C /* Debug */,
@@ -630,7 +656,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88705F161AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "HelpDial" */ = {
+		88705F161AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "Hotline YP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88705F171AD9596C009E0F3C /* Debug */,
@@ -639,7 +665,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88705F191AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "HelpDialTests" */ = {
+		88705F191AD9596C009E0F3C /* Build configuration list for PBXNativeTarget "Hotline YPTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88705F1A1AD9596C009E0F3C /* Debug */,
