@@ -20,6 +20,8 @@ class ReviewPage: UIViewController {
         case "Sure": if let checkURL = NSURL(string: "https://itunes.apple.com/us/app/hotline-yellow-pages-customer/id1006278912?ls=1&mt=8") {
             if UIApplication.sharedApplication().openURL(checkURL) {
             }}
+        askForReview = false
+        NSUserDefaults.standardUserDefaults().setObject(askForReview, forKey: "askForReview")
         default: println("Do Nothing")
         }}
 
