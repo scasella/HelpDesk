@@ -22,6 +22,7 @@ var favorites = [String]()
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UITextFieldDelegate{
 
+    @IBOutlet var startLabel: UILabel!
     @IBOutlet var searchBox: SpringTextField!
     @IBOutlet var titleHeader: UIImageView!
     @IBOutlet var addmore: UILabel!
@@ -65,7 +66,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func searchButton(sender: AnyObject) {
         if mainTable.hidden == false {
-        
+            startLabel.hidden = true
             searchBox.text = ""
             listTable.reloadData()
             searchBox.animation = "morph"
@@ -82,17 +83,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             searchView.hidden = true
             smallSearch.hidden = true
             mainTable.hidden = false
+            if favorites.count == 0 {
+                startLabel.hidden = false
+            }
             searchImg.setImage(UIImage(named: "newGreenB.png"), forState: UIControlState.Normal)
             mainTable.reloadData()
         
         }
         
-    }
-    
-    
-    
-    override func viewDidAppear(animated: Bool) {
-        println("TEST")
     }
     
     
@@ -151,7 +149,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         favorites = NSUserDefaults.standardUserDefaults().objectForKey("favorites") as! [String]
         nameCust = NSUserDefaults.standardUserDefaults().objectForKey("nameCust") as! [String]
         numberCust = NSUserDefaults.standardUserDefaults().objectForKey("numberCust") as! [String]
-        hoursCust = NSUserDefaults.standardUserDefaults().objectForKey("hoursCust") as! [String] }
+            hoursCust = NSUserDefaults.standardUserDefaults().objectForKey("hoursCust") as! [String]
+    
+        }
+        
+        if favorites.count == 0 {
+            startLabel.hidden = false
+        }
+    
         
         var namePath = NSBundle.mainBundle().pathForResource("name", ofType: "txt")
         var nameUrl = NSURL.fileURLWithPath(namePath!)
@@ -324,7 +329,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
             
             mainTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            mainTable.reloadData() }
+            mainTable.reloadData()
+            
+            if favorites.count == 0 {
+                startLabel.hidden = false
+            }
+        
+        
+        }
         
     }
     
