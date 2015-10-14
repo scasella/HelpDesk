@@ -25,8 +25,8 @@ class DetailView: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func callClick(sender: AnyObject) {
-        if numberText.text.length == 10 {
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numberText.text)")!)
+        if numberText.text!.length == 10 {
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel:\(numberText.text!)")!)
         if askForReview == false {
             performSegueWithIdentifier("mainSegue", sender: self) } else {
             performSegueWithIdentifier("toReviewPageDetail", sender: self) }
@@ -41,25 +41,25 @@ class DetailView: UIViewController, UITextFieldDelegate {
             nameCust.removeAtIndex(nameSet)
             numberCust.removeAtIndex(nameSet)
             hoursCust.removeAtIndex(nameSet)
-            nameCust.insert(nameText.text, atIndex: nameSet)
-            numberCust.insert(numberText.text, atIndex: nameSet)
-            hoursCust.insert(hoursText.text, atIndex: nameSet)
+            nameCust.insert(nameText.text!, atIndex: nameSet)
+            numberCust.insert(numberText.text!, atIndex: nameSet)
+            hoursCust.insert(hoursText.text!, atIndex: nameSet)
             
             NSUserDefaults.standardUserDefaults().setObject(nameCust, forKey: "nameCust")
             NSUserDefaults.standardUserDefaults().setObject(numberCust, forKey: "numberCust")
             NSUserDefaults.standardUserDefaults().setObject(hoursCust, forKey: "hoursCust")
             NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "favorites")
             
-        } else if find(favorites, nameText.text) != nil {
+        } else if favorites.indexOf(nameText.text!) != nil {
                 
-                println("Company name already favorited")
+                print("Company name already favorited")
                 
             } else {
             
-            favorites.append(nameText.text)
-            nameCust.append(nameText.text)
-            numberCust.append(numberText.text)
-            hoursCust.append(hoursText.text)
+            favorites.append(nameText.text!)
+            nameCust.append(nameText.text!)
+            numberCust.append(numberText.text!)
+            hoursCust.append(hoursText.text!)
             
             NSUserDefaults.standardUserDefaults().setObject(nameCust, forKey: "nameCust")
             NSUserDefaults.standardUserDefaults().setObject(numberCust, forKey: "numberCust")
@@ -119,7 +119,7 @@ class DetailView: UIViewController, UITextFieldDelegate {
 
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         if textField == numberText {
-            if count(numberText.text) == 10 || count(numberText.text) == 0 {
+            if numberText.text!.characters.count == 10 || numberText.text!.characters.count == 0 {
                 return true } else {
                 numberText.text = ""
                 numberText.placeholder = "Number format 1112223333"

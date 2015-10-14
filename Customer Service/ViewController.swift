@@ -41,7 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         filteredNames.removeAll(keepCapacity: false)
 
         
-        let searchPredicate = NSPredicate(format: "SELF BEGINSWITH [c] %@", searchBox.text)
+        let searchPredicate = NSPredicate(format: "SELF BEGINSWITH [c] %@", searchBox.text!)
         let array = (name as NSArray).filteredArrayUsingPredicate(searchPredicate)
         filteredNames = array as! [String]
         
@@ -53,7 +53,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         }
         
-            smallSearch.hidden = false
+        
             self.listTable!.reloadData()
 
         }
@@ -74,6 +74,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             searchBox.force = 1.2
             searchBox.duration = 1.25
             searchBox.animate()
+            searchBox.becomeFirstResponder()
+            smallSearch.hidden = false
             searchImg.setImage(UIImage(named: "homeGreen.png"), forState: UIControlState.Normal)
             mainTable.hidden = true
             searchView.hidden = false
@@ -98,8 +100,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //Fav Results Add Button
     func buttonClicked(sender:UIButton) {
         
-        var buttonRow = sender.tag
-        var lookup = find(name, filteredNames[buttonRow]) //locate company within directory
+        let buttonRow = sender.tag
+        let lookup = name.indexOf(filteredNames[buttonRow]) //locate company within directory
         
         favorites.append(filteredNames[buttonRow])
         nameCust.append(filteredNames[buttonRow])
@@ -120,8 +122,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBAction func callNow(sender: UIButton) {
-        var numLookup = sender.tag
-        var rightNum = find(name, filteredNames[numLookup])
+        let numLookup = sender.tag
+        let rightNum = name.indexOf(filteredNames[numLookup])
          UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(number[rightNum!])")!)
         if number[rightNum!] != "" {
         if askForReview == true {
@@ -158,48 +160,66 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     
         
-        var namePath = NSBundle.mainBundle().pathForResource("name", ofType: "txt")
+        let namePath = NSBundle.mainBundle().pathForResource("name", ofType: "txt")
         var nameUrl = NSURL.fileURLWithPath(namePath!)
         var error: NSError?
-        let nameContent = NSString(contentsOfFile: namePath!, encoding:NSUTF8StringEncoding, error: &error)
+        let nameContent: NSString?
+        do {
+            nameContent = try NSString(contentsOfFile: namePath!, encoding:NSUTF8StringEncoding)
+        } catch let error1 as NSError {
+            error = error1
+            nameContent = nil
+        }
        
         if nameContent != nil {
-           var nameReformat = nameContent!.componentsSeparatedByString("=")
+           let nameReformat = nameContent!.componentsSeparatedByString("=")
             for index in nameReformat {
-                  name.append(index as! String)
+                  name.append(index )
             }
                 
             
         } else {
-            println("error: \(error)")
+            print("error: \(error)")
         }
      
-        var numbersPath = NSBundle.mainBundle().pathForResource("numbers", ofType: "txt")
+        let numbersPath = NSBundle.mainBundle().pathForResource("numbers", ofType: "txt")
         var numbersUrl = NSURL.fileURLWithPath(numbersPath!)
-        let numbersContent = NSString(contentsOfFile: numbersPath!, encoding:NSUTF8StringEncoding, error: &error)
+        let numbersContent: NSString?
+        do {
+            numbersContent = try NSString(contentsOfFile: numbersPath!, encoding:NSUTF8StringEncoding)
+        } catch let error1 as NSError {
+            error = error1
+            numbersContent = nil
+        }
         if numbersContent != nil {
-            var numbersReformat = numbersContent!.componentsSeparatedByString("=")
+            let numbersReformat = numbersContent!.componentsSeparatedByString("=")
             for index in numbersReformat {
-                number.append(index as! String)
+                number.append(index )
             }
         
             
         } else {
-            println("error: \(error)")
+            print("error: \(error)")
         }
         
-        var hoursPath = NSBundle.mainBundle().pathForResource("hours", ofType: "txt")
+        let hoursPath = NSBundle.mainBundle().pathForResource("hours", ofType: "txt")
         var hoursUrl = NSURL.fileURLWithPath(hoursPath!)
-        let hoursContent = NSString(contentsOfFile: hoursPath!, encoding:NSUTF8StringEncoding, error: &error)
+        let hoursContent: NSString?
+        do {
+            hoursContent = try NSString(contentsOfFile: hoursPath!, encoding:NSUTF8StringEncoding)
+        } catch let error1 as NSError {
+            error = error1
+            hoursContent = nil
+        }
         if hoursContent != nil {
-            var hoursReformat = hoursContent!.componentsSeparatedByString("=")
+            let hoursReformat = hoursContent!.componentsSeparatedByString("=")
             for index in hoursReformat {
-                hours.append(index as! String)
+                hours.append(index )
             }
             
             
         } else {
-            println("error: \(error)")
+            print("error: \(error)")
         }
     }
 
@@ -254,13 +274,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
            
             if tableView == mainTable {
                 
-            var cell2 : MainCell! = mainTable.dequeueReusableCellWithIdentifier("Cell2") as! MainCell
+            let cell2 : MainCell! = mainTable.dequeueReusableCellWithIdentifier("Cell2") as! MainCell
             cell2.cellLabel.text = favorites[indexPath.row]
             
            
             if nameCust.count != 0 {
                 
-            var bgSet: Int = find(nameCust, cell2.cellLabel.text!)!
+            var bgSet: Int = nameCust.indexOf((cell2.cellLabel.text!))!
                 
             }
 
@@ -279,8 +299,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
              nameSet = indexPath.row
             
             if tableView == listTable {
-            var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
-            if find(nameCust, currentCell.listLabel.text!) == nil{
+            let currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
+            if nameCust.indexOf((currentCell.listLabel.text!)) == nil{
                     currentCell.addButton.hidden = false } else {
                     currentCell.checkImg.hidden = false
                     }
@@ -302,7 +322,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             if listTable.cellForRowAtIndexPath(indexPath) != nil {
            
-                var currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
+                let currentCell = listTable.cellForRowAtIndexPath(indexPath) as! CustomCell
                 currentCell.addButton.hidden = true
                 currentCell.checkImg.hidden = true
                 currentCell.callButton.hidden = true
