@@ -304,8 +304,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     currentCell.addButton.hidden = false } else {
                     currentCell.checkImg.hidden = false
                     }
+                if number[name.indexOf(currentCell.listLabel.text!)!] != "" {
                     currentCell.callButton.hidden = false
-                    currentCell.listLabel.textColor = UIColor.blackColor() }
+                    currentCell.listLabel.textColor = UIColor.blackColor() }}
     
             else {
             

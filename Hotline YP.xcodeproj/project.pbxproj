@@ -344,7 +344,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Stephen Casella";
 				TargetAttributes = {
 					88705EF61AD9596C009E0F3C = {
@@ -510,6 +510,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -585,6 +586,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scasella.HelpDial;
 				PRODUCT_NAME = "Hotline YP";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -605,6 +607,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scasella.HelpDial;
 				PRODUCT_NAME = "Hotline YP";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -625,6 +628,7 @@
 				);
 				INFOPLIST_FILE = "Customer ServiceTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scasella.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Hotline YPTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Customer Service.app/Customer Service";
 			};
@@ -640,6 +644,7 @@
 				);
 				INFOPLIST_FILE = "Customer ServiceTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scasella.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Hotline YPTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Customer Service.app/Customer Service";
 			};
